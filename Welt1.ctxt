@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Welt1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Welt_1\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Welt1()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Welt_1.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Bereite\ die\ Welt\ f\u00FCr\ den\ Programmstart\ vor.\ Das\ hei\u00DFt\:\ Erzeuge\ die\ Anfangs-\r\n\ Objekte\ und\ f\u00FCge\ sie\ der\ Welt\ hinzu.\r\n
+comment3.params=
+comment3.target=Eichh\u00F6rnchen\ getEichh\u00F6rnchen()
+comment4.params=
+comment4.target=boolean\ isRunning()
+numComments=5

@@ -1,0 +1,12 @@
+ if(a==1){
+                    setImage("eichhörnchenlauf1.png");
+                }else{
+                    if(a==2){                
+                        setImage("eichhörnchenlauf2.png"); 
+                    }else{
+                        if(a==3) {
+                            setImage("eichhörnchenlauf3.png");
+                        }
+
+                    }                                       
+                } 

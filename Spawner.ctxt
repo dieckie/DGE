@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Spawner
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Spawner\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=enemy\ interval\ amount
+comment1.target=Spawner(Enemy,\ int,\ int)
+comment1.text=\r\n\ Spawnt\ mitgegebenen\ Gegner\ (mit\ enemy.newInstance()\ oder\ so)\ mit\ intervall\ und\ anzahl,\ danach\ l\u00F6scht\ es\ sich\ selbst\r\n\ \r\n\ @param\ interval\r\n\ \ \ \ \ \ \ \ \ \ \ \ Intervall\ in\ act-Methoden-aufrufen.\r\n
+comment2.params=enemy\ interval\ amount\ delay
+comment2.target=Spawner(Enemy,\ int,\ int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Spawner\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=4

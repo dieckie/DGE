@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=SpikesPlatziert
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Spikes_platziert\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Die\ Bedingung\ sorgt\ daf\u00FCr,\ dass\ die\ Spikes\ nur\ schaden\ machen,\ wenn\ man\ das\ Spiel\ fortsetzen\ will.\r\n
+comment2.params=
+comment2.target=void\ spikesSchaden()
+comment2.text=\r\n\ erzeugt\ Schaden\ f\u00FCr\ die\ Gegner\ bei\ Ber\u00FChrung.\r\n
+comment3.params=
+comment3.target=void\ entfernen()
+comment3.text=\r\n\ entfernt\ die\ Spikes\ nach\ 12\ hits.\r\n
+numComments=4
