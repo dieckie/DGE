@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Eichhoernchen
+comment0.text=\ \ \ \ \ \ \r\n\ Write\ a\ description\ of\ class\ Eichhoernchen\ here.\ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \r\n\ @author\ (your\ name)\ \ \ \ \ \ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\ \ \ \ \ \ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ gameover()
+comment2.text=\ \ \ \ \ \ \r\n\ oeffnet\ den\ gameover\ Bildschirm\ nach\ dem\ "tod"\ (l\=0)\ des\ Eichhoernchens.\ \ \ \ \ \ \r\n
+comment3.params=
+comment3.target=void\ coinceat()
+comment3.text=\ \ \ \ \ \ \r\n\ man\ kann\ mit\ einem\ Tastendruck\ zu\ Vorfuehrzwecken\ beliebig\ viele\ Coins\ hinzu\ fuegen.\ \ \ \ \ \ \r\n
+comment4.params=
+comment4.target=void\ schiessen()
+comment4.text=\ \ \ \ \ \ \r\n\ setzt\ das\ Projektil\ in\ die\ Welt.\ \ \ \ \ \ \ \r\n
+comment5.params=
+comment5.target=void\ bewegen()
+comment5.text=\ \ \ \ \ \ \r\n\ Es\ wird\ definiert\ wann\ sich\ das\ Eichhoernchen\ wie\ bewegen\ soll.\ \ \ \ \ \ \r\n
+comment6.params=
+comment6.target=void\ Wellen()
+comment6.text=\ \ \ \ \ \ \r\n\ naechste\ Welle.\ \ \ \ \ \ \r\n
+comment7.params=damage
+comment7.target=void\ hurt(int)
+comment8.params=healthGained
+comment8.target=void\ heal(int)
+comment9.params=
+comment9.target=int\ getHealth()
+numComments=10

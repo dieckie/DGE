@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Musik
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Musik\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\ \ \ \ \ \ \r\n\ Write\ a\ description\ of\ class\ Musik\ here.\ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \r\n\ @author\ (your\ name)\ \ \ \ \ \ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\ \ \ \ \ \ \r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Musik\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\ \ \ \ \ \ \r\n\ Act\ -\ do\ whatever\ the\ Musik\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \ \ \ \ \ \r\n
 comment2.params=
 comment2.target=void\ startMusic()
-comment2.text=\r\n\ startet\ die\ Hintergrundmusik.\r\n
+comment2.text=\ \ \ \ \ \ \r\n\ startet\ die\ Hintergrundmusik.\ \ \ \ \ \ \r\n
 comment3.params=
 comment3.target=void\ stopMusic()
-comment3.text=\r\n\ stoppt\ die\ Hintergrundmusik.\r\n
+comment3.text=\ \ \ \ \ \ \r\n\ stoppt\ die\ Hintergrundmusik.\ \ \ \ \ \ \r\n
 comment4.params=volume
 comment4.target=void\ volumeMusic(int)
-comment4.text=\r\n\ setzt\ die\ Lautst\u00E4rke\ der\ Hintergrundmusik.\r\n
+comment4.text=\ \ \ \ \ \ \r\n\ setzt\ die\ Lautstaerke\ der\ Hintergrundmusik.\ \ \ \ \ \ \r\n
 numComments=5
