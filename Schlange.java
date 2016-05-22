@@ -7,9 +7,10 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and snakeInfo)
  * @version (a version number or a date)
  */
 public class Schlange extends Enemy {
-    Eichhörnchen eichhörnchen = null;
+    Eichhö
+
+    rnchen eichhörnchen=null;
     Welt1 world;
-    
     /*
      * gibt an wie oft die Schlange getroffen wurde
      */
@@ -35,7 +36,6 @@ public class Schlange extends Enemy {
      * welches Schadensbild soll ausgewählt werden?
      */
     private boolean SB = false;
-    
     boolean init = true;
 
     /**
@@ -159,8 +159,8 @@ public class Schlange extends Enemy {
     public void warten() {
         setLocation(getX(), getY());
     }
-    
-    public Schlange newInstance(){
+
+    public Schlange newInstance() {
         return new Schlange();
     }
 }

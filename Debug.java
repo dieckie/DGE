@@ -8,7 +8,9 @@ import java.awt.*;
  * @version (a version number or a date)
  */
 public class Debug extends Actor {
+
     Welt1 world;
+
     /**
      * Act - do whatever the Debug wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */

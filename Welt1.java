@@ -10,11 +10,10 @@ import java.io.*;
 public class Welt1 extends World {
 
     int x = 0;
-    Musik musik;
-    Eichhörnchen eichhörnchen;
+    Musik musik;Eichhö
+    rnchen eichhörnchen;
     Wellen wellen;
     Coins coins;
-    
 
     /**
      * Constructor for objects of class Welt_1.
@@ -23,7 +22,6 @@ public class Welt1 extends World {
     public Welt1() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 720, 1);
-
         prepare();
     }
 
@@ -111,9 +109,11 @@ public class Welt1 extends World {
 
         wellen = new Wellen();
         addObject(wellen,495,25);
-    }
-    
-    public Eichhörnchen getEichhörnchen(){
+    }public Eichhö
+
+    rnchen getEichhö
+
+    rnchen(){
         return eichhörnchen;
     }
 

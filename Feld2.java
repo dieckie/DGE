@@ -7,15 +7,17 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Feld2 extends Down {
+
     Welt1 world;
-    int coin;
-    Eichhörnchen e;
+    int coin;Eichhö
+    rnchen e;
+
     /**
      * Act - do whatever the Feld2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        world=(Welt1)getWorld();
-        coin=world.coins.coins;
+        world = (Welt1) getWorld();
+        coin = world.coins.coins;
         List();
         Kauf();
     }

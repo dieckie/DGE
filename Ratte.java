@@ -12,9 +12,8 @@ public class Ratte extends Enemy {
      * Definiert wie lange das Bild bei einem Treffer geändert bleibt
      */
     final int WOUND_SPRITE_DURATION = 200;
-    final int COIN_EARNING = 1;
-    
-    Eichhörnchen eichhörnchen;
+    final int COIN_EARNING = 1;Eichhö
+    rnchen eichhörnchen;
     Welt1 world;
     /*
      * gibt an wie oft die Schlange getroffen wurde
@@ -28,18 +27,15 @@ public class Ratte extends Enemy {
      * überprüft ob das Bild bei einem Treffer aktiv ist oder nicht
      */
     boolean hurtSprite = false;
-
     /*
      * Fügt die Sounds zu Greenfoot hinzu.
      */
     public GreenfootSound Kick = new GreenfootSound("kick.mp3");
-
     /*
      * welches Schadensbild soll ausgewählt werden?
      */
     private boolean SB = false;
     private int x, y, w = 0;
-
     boolean init = true;
 
     /**
@@ -161,7 +157,7 @@ public class Ratte extends Enemy {
     }
 
     @Override
-    public Ratte newInstance(){
+    public Ratte newInstance() {
         return new Ratte();
     }
 }

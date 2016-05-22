@@ -15,7 +15,7 @@ public class Coins extends OpenVariable {
      * Act - do whatever the coins wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(Greenfoot.isKeyDown("c")){
+        if(Greenfoot.isKeyDown("c")) {
             coins++;
             draw();
         }
@@ -24,10 +24,9 @@ public class Coins extends OpenVariable {
     /**
      * verändert die Anzeige bei erhalten eines Coins(C).
      */
-
     public void draw() {
         System.out.println("COINS");
-        if(coins < 150){
+        if(coins < 150) {
             int co = coins % 25;
             int bills = coins / 25;
             GreenfootImage img = new GreenfootImage(350, 60);
@@ -35,33 +34,32 @@ public class Coins extends OpenVariable {
             int coinsLeft = co % 5;
             int x = 350;
             GreenfootImage five = new GreenfootImage("images/Coins/C5.png");
-            for(int i = 0; i < coin5amount; i++){
+            for(int i = 0; i < coin5amount; i++) {
                 img.drawImage(five, x - five.getWidth(), 0);
                 x -= 40;
             }
-            if(coinsLeft > 0){
+            if(coinsLeft > 0) {
                 GreenfootImage leftOver = new GreenfootImage("images/Coins/C" + coinsLeft + ".png");
                 img.drawImage(leftOver, x - leftOver.getWidth(), 0);
                 x -= 40;
             }
-            if(bills > 0){
+            if(bills > 0) {
                 GreenfootImage bill = new GreenfootImage("images/Coins/Bill" + bills + ".png");
                 img.drawImage(bill, x - bill.getWidth() - 5, 0);
             }
             img.setFont(new Font(Font.MONOSPACED, Font.BOLD, 40));
             img.setColor(new Color(200, 200, 200));
             img.drawString(coins + "", -3, 37);
-            
             setImage(img);
         }
     }
 
-    public void earnCoins(int coins){
+    public void earnCoins(int coins) {
         this.coins += coins;
         draw();
     }
-    
-    public void lostCoins(int coins){
+
+    public void lostCoins(int coins) {
         this.coins -= coins;
         draw();
     }

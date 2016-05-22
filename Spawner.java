@@ -20,14 +20,12 @@ public class Spawner extends Actor {
      * @param interval
      *            Intervall in act-Methoden-aufrufen.
      */
-    
     public Spawner(Enemy enemy, int interval, int amount) {
         this.enemy = enemy.newInstance();
         this.interval = interval;
         this.amount = amount;
-       
     }
-    
+
     public Spawner(Enemy enemy, int interval, int amount, int delay) {
         this.enemy = enemy.newInstance();
         this.interval = interval;

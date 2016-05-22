@@ -10,12 +10,12 @@ public class Feld4 extends Down {
 
     int oldF4 = -1;
     Welt1 world = null;
-    
+
     /**
      * Act - do whatever the Feld1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(world == null){
+        if(world == null) {
             world = (Welt1) getWorld();
         }
         List();
@@ -26,7 +26,7 @@ public class Feld4 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(oldF4 != F4){
+        if(oldF4 != F4) {
             oldF4 = F4;
             if(F4 >= 1 && F4 <= 8) {
                 setImage(F4 + ".png");
@@ -43,7 +43,7 @@ public class Feld4 extends Down {
                 Wand Wand = new Wand();
                 getWorld().addObject(Wand, 200, 200);
                 K = 1;
-                 world.coins.lostCoins(8);
+                world.coins.lostCoins(8);
             }
         }
     }

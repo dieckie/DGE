@@ -25,6 +25,6 @@ public class Gameover extends World {
         Restart restart = new Restart();
         addObject(restart, 640, 220);
         Exit exit = new Exit();
-        addObject(exit,640, 380);
+        addObject(exit, 640, 380);
     }
 }

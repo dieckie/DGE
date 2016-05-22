@@ -7,14 +7,16 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Feld3 extends Down {
+
     Welt1 world = null;
     int coin;
+
     /**
      * Act - do whatever the Feld3 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        world=(Welt1)getWorld();
-        coin=world.coins.coins;
+        world = (Welt1) getWorld();
+        coin = world.coins.coins;
         List();
         Kauf();
     }
@@ -53,7 +55,7 @@ public class Feld3 extends Down {
      * erstellt Wand bei anklicken und zieht die Münzen ab (Objekt kann nur gekauft werden, wenn genügend Münzen vorhanden sind).
      */
     public void Kauf() {
-       if(coin >= 8) {
+        if(coin >= 8) {
             if(F3 == 4 && Greenfoot.mouseClicked(this)) {
                 Wand Wand = new Wand();
                 getWorld().addObject(Wand, 200, 200);

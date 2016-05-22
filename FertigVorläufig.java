@@ -19,7 +19,9 @@ public class FertigVorläufig extends Shop {
 
     }
 
-    public void drücken(){
+    public void drü
+
+    cken(){
         if(Greenfoot.isKeyDown("escape")) {
             if(K==0 && !isEscPressed){
                 K=1;
@@ -51,7 +53,9 @@ public class FertigVorläufig extends Shop {
 
     }
 
-    public void drücken2(){
+    public void drü
+
+    cken2(){
         if(K==0) {
             setImage("images/pause.png");
         }

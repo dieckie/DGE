@@ -7,21 +7,20 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Feld1 extends Down {
-    
+
     int coin;
     boolean _1pressed = false;
     int oldF1 = -1;
-
     Welt1 world = null;
 
     /**
      * Act - do whatever the Feld1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(world == null){
+        if(world == null) {
             world = (Welt1) getWorld();
         }
-        coin=world.coins.coins;
+        coin = world.coins.coins;
         List();
         Kauf();
     }
@@ -30,7 +29,7 @@ public class Feld1 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(oldF1 != F1){
+        if(oldF1 != F1) {
             oldF1 = F1;
             if(F1 >= 1 && F1 <= 8) {
                 setImage(F1 + ".png");

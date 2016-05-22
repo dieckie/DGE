@@ -12,7 +12,7 @@ public class Restart extends OpenVariable {
      * Act - do whatever the Restart wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(Greenfoot.isKeyDown("r")||(Greenfoot.mouseClicked(this))) {
+        if(Greenfoot.isKeyDown("r") || (Greenfoot.mouseClicked(this))) {
             Greenfoot.setWorld(new Welt1());
         }
     }

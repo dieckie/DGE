@@ -46,7 +46,6 @@ public class Speichern extends FertigVorläufig {
                     writer.close();
                     reader.close();
                 } catch(IOException e) {
-                    
                     e.printStackTrace();
                 }
             }

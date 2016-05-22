@@ -24,7 +24,6 @@ public class Mute extends FertigVorläufig {
             getWorld().removeObject(this);
         }
         mute();
-        
     }
 
     private void mute() {

@@ -32,7 +32,9 @@ public class Projektil extends OpenVariable {
     /**
      * entfernt die Eichel bei berührung mit der Ratte
      */
-    private void löschenR()
+    private void lö
+
+    schenR()
     { //TODO INTERSECTING WITH ENEMY!
         ratte = getOneIntersectingObject(Ratte.class);
         schlange = getOneIntersectingObject(Schlange.class);
