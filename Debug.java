@@ -13,7 +13,7 @@ public class Debug extends Actor {
      * Act - do whatever the Debug wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        // Add your action code here.
+        // Da passiert was
         world=(Welt1)getWorld();
         if(Greenfoot.isKeyDown("F3")) {
             greenfoot.MouseInfo mouse = Greenfoot.getMouseInfo();
