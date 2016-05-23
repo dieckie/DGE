@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=WandPlatziert
-comment0.text=\ \ \ \ \ \ \r\n\ Write\ a\ description\ of\ class\ Wand_platziert\ here.\ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \r\n\ @author\ (your\ name)\ \ \ \ \ \ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\ \ \ \ \ \ \r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Wand_platziert\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\ \ \ \ \ \ \r\n\ Act\ -\ do\ whatever\ the\ Wand_platziert\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ \ \ \ \ \ \r\n
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Wand_platziert\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ anhalten()
-comment2.text=\ \ \ \ \ \ \r\n\ haelt\ die\ Gegner\ bei\ Beruehrung\ mit\ der\ Wand\ an;\ entfernt\ die\ Wand\ nach\ einer\ Zeit.\ \ \ \ \ \ \r\n
+comment2.text=\r\n\ haelt\ die\ Gegner\ bei\ Beruehrung\ mit\ der\ Wand\ an;\ entfernt\ die\ Wand\ nach\ einer\ Zeit.\r\n
 numComments=3
