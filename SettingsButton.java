@@ -15,5 +15,9 @@ public class SettingsButton extends FertigVorlaeufig
     public void act() 
     {
         // Add your action code here.
-    }    
+        if (Greenfoot.mouseClicked(this)){
+            Settings s = new Settings();
+            getWorld().addObject(s, getX(), getY());
+        }    
+    }
 }
