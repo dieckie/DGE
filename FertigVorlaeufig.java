@@ -26,7 +26,7 @@ public class FertigVorlaeufig extends Shop {
                 getWorld().addObject(pauseScreen, 450, 245);
                 Mute m = new Mute();
                 getWorld().addObject(m, 450, 435);
-                Settings s = new Settings();
+                SettingsButton s = new SettingsButton();
                 getWorld().addObject(s,450,625);
                 isEscPressed = true;
             } else if(K == 1 && !isEscPressed) {
@@ -42,7 +42,7 @@ public class FertigVorlaeufig extends Shop {
             getWorld().addObject(pauseScreen, 450, 245);
             Mute m = new Mute();
             getWorld().addObject(m, 450, 435);
-            Settings s = new Settings();
+            SettingsButton s = new SettingsButton();
             getWorld().addObject(s,450,625);
         } else {
             if(Greenfoot.mouseClicked(this) && K == 1) {
