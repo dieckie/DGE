@@ -3,6 +3,8 @@ comment0.target=Eichhoernchen
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Eichhoernchen\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
+comment10.params=health
+comment10.target=void\ setHealth(int)
 comment2.params=
 comment2.target=void\ gameover()
 comment2.text=\r\n\ oeffnet\ den\ gameover\ Bildschirm\ nach\ dem\ "tod"\ (l\=0)\ des\ Eichhoernchens.\r\n
@@ -24,4 +26,4 @@ comment8.params=healthGained
 comment8.target=void\ heal(int)
 comment9.params=
 comment9.target=int\ getHealth()
-numComments=10
+numComments=11

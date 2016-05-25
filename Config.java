@@ -11,19 +11,21 @@ public class Config extends Config1 {
     }
 
     public void config() {
+        Welt1 w = (Welt1)getWorld();
         try {
+            
             String line = br.readLine();
             if(line != null) {
                 // String text = s.nextLine();
                 String[] parts = line.split(" ");
                 username = parts[0];
                 password = parts[1];
-                W = Integer.parseInt(parts[2]);
-                C = Integer.parseInt(parts[3]);
-                l = Integer.parseInt(parts[4]);
-                saveWaves = W;
-                saveCoins = C;
-                saveHealth = l;
+                w.wellen.welle = Integer.parseInt(parts[2]);
+                w.coins.coins = Integer.parseInt(parts[3]);
+                w.getEichhoernchen().setHealth(Integer.parseInt(parts[4]));
+                saveWaves = w.wellen.welle;
+                saveCoins = w.coins.coins;
+                saveHealth = w.getEichhoernchen().getHealth();
                 // for(String st : parts){
                 // System.out.println(st);
                 // }
