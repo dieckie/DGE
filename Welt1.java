@@ -14,6 +14,8 @@ public class Welt1 extends World {
     Eichhoernchen eichhoernchen;
     Wellen wellen;
     Coins coins;
+    
+    int menustate = 0;
 
     /**
      * Constructor for objects of class Welt_1.
@@ -23,6 +25,8 @@ public class Welt1 extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 720, 1);
         prepare();
+        Class[] paintorder = {Debug.class, Settings.class};
+        setPaintOrder(paintorder);
     }
 
     /**
@@ -45,12 +49,12 @@ public class Welt1 extends World {
         Border border = new Border();
         addObject(border, 902, 360);
         Shop shop = new Shop();
-        addObject(shop, 1092, 360);
+        addObject(shop, 1092, 360); 
         // RattenSpawner Rs = new RattenSpawner();
         // addObject(Rs,49,684);
         // SchlangenSpawner Ss = new SchlangenSpawner(eichhoernchen);
         // addObject(Ss,49,684);
-        Greenfoot.setSpeed(60);
+        Greenfoot.setSpeed(60); 
         Feld1 feld1 = new Feld1();
         addObject(feld1, 1091, 62);
         Feld2 feld2 = new Feld2();

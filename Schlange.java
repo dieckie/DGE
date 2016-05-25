@@ -144,12 +144,8 @@ public class Schlange extends Enemy {
         Kick.setVolume(15);
         Kick.play();
         if(schadenS >= 3) {
-            world.wellen.enemyDied();
-            getWorld().removeObject(this);
-            OpenVariable.s_d++;
-            world.coins.earnCoins(2);
-            Fatality.setVolume(15);
-            Fatality.play();
+            world.coins.earnCoins(1);
+            died();
         }
     }
 

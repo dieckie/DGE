@@ -19,8 +19,8 @@ public class Musik extends OpenVariable {
      * Act - do whatever the Musik wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        volumeMusic(Settings.volume);
         // Add your action code here.
-        volumeMusic(10);
         if(!playingbg) {
             startMusic();
             playingbg = true;
