@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Config
-comment1.params=f\ w
-comment1.target=Config(java.io.File,\ Welt1)
+comment1.params=w
+comment1.target=void\ config(Welt1)
 comment2.params=
-comment2.target=void\ config()
-numComments=3
+comment2.target=void\ speichern()
+comment3.params=
+comment3.target=void\ run()
+numComments=4
