@@ -1,3 +1,4 @@
 *.class
 _download.sh
 _upload.sh
+_stash.sh
