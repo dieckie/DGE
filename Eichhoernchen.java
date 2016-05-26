@@ -32,9 +32,9 @@ public class Eichhoernchen extends Actor {
         }
         if(OpenVariable.gameover) {
             Greenfoot.setWorld(new Gameover());
-            OpenVariable.saveWaves = 1;
-            OpenVariable.saveCoins = 0;
-            OpenVariable.saveHealth = 10;
+            Config.saveWaves = 1;
+            Config.saveCoins = 0;
+            Config.saveHealth = 10;
         }
     }
 

@@ -83,9 +83,7 @@ public class Welt1 extends World {
         down.setLocation(1269, 711);
         wellen = new Wellen();
         addObject(wellen, 495, 25);
-        File f = new File("config.txt");
-        Config c = new Config(f, this);
-        c.config();
+        Config.config(this);
         wellen.initWaves();
         OpenVariable.reset();
         coins.draw();
@@ -112,6 +110,7 @@ public class Welt1 extends World {
         OpenVariable.K = 0;
         menustate = 0;
     }
+
 
     public void initDifficulty() {
         switch(getWellen().getDifficulty()) {

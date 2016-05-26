@@ -9,8 +9,8 @@ import java.io.File;
  */
 public class OpenVariable extends Actor {
 
-    static String username, password;
-    static int saveCoins, saveHealth, saveWaves;
+    //static String username, password;
+    //static int saveCoins, saveHealth, saveWaves;
     /*
      * macht dass man nur einen weiteren spieler hinzufuegen kann
      */

@@ -49,10 +49,10 @@ public class Wellen extends Actor {
             } else {
                 welle++;
             }
-            OpenVariable.saveWaves = welle;
-            OpenVariable.saveCoins = world.coins.coins;
-            OpenVariable.saveHealth = world.eichhoernchen.getHealth();
-            Speichern.speichern();
+            Config.saveWaves = welle;
+            Config.saveCoins = world.coins.coins;
+            Config.saveHealth = world.eichhoernchen.getHealth();
+            Config.speichern();
             String[] spawners = wellen[welle].split("\\|");
             for(int i = 0; i < spawners.length; i++) {
                 spawn(spawners[i]);
