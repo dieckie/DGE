@@ -30,7 +30,6 @@ public class Settings extends FertigVorlaeufig {
                 if(mouse.getY() > 240 && mouse.getY() < 270) {
                     if(mouse.getX() > 345 && mouse.getX() < 945) {
                         tonX = mouse.getX() - 345;
-                        // System.out.println(tonX);
                     }
                 } else if(mouse.getY() > 460 && mouse.getY() < 560) {
                     if(mouse.getX() > 500 && mouse.getX() < 800) {

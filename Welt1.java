@@ -14,6 +14,8 @@ public class Welt1 extends World {
     Eichhoernchen eichhoernchen;
     Wellen wellen;
     Coins coins;
+    
+    int menustate = 0;
 
     /**
      * Constructor for objects of class Welt_1.
@@ -94,5 +96,15 @@ public class Welt1 extends World {
 
     public boolean isRunning() {
         return OpenVariable.K == 0;
+    }
+    
+    public void pause(){
+        OpenVariable.K = 1;
+        menustate = 1;
+    }
+    
+    public void resume(){
+        OpenVariable.K = 0;
+        menustate = 0;
     }
 }

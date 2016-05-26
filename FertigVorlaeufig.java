@@ -9,19 +9,33 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FertigVorlaeufig extends Shop {
 
     boolean isEscPressed = false;
+    boolean init = true;
+
+    Welt1 world;
+
+    boolean oldRunning = false;
 
     /**
      * setzt den Spielverlauf fort.
      */
     public void act() {
+        if(init){
+            world = (Welt1)getWorld();
+            init = false;
+
+        }
         druecken();
-        druecken2();
+        if(oldRunning != world.isRunning()){
+            repaint();
+            oldRunning = world.isRunning();
+        }
     }
 
     public void druecken() {
+        //TODO das hier besser zusammen fügen.
         if(Greenfoot.isKeyDown("escape")) {
-            if(K == 0 && !isEscPressed) {
-                K = 1;
+            if(world.isRunning() && !isEscPressed) {
+                world.pause();
                 PauseScreen pauseScreen = new PauseScreen();
                 getWorld().addObject(pauseScreen, 450, 245);
                 Mute m = new Mute();
@@ -29,15 +43,15 @@ public class FertigVorlaeufig extends Shop {
                 SettingsButton s = new SettingsButton();
                 getWorld().addObject(s, 450, 625);
                 isEscPressed = true;
-            } else if(K == 1 && !isEscPressed) {
-                K = 0;
+            } else if(!world.isRunning() && !isEscPressed) {
+                world.resume();
                 isEscPressed = true;
             }
         } else {
             isEscPressed = false;
         }
-        if(Greenfoot.mouseClicked(this) && K == 0) {
-            K = 1;
+        if(Greenfoot.mouseClicked(this) && world.isRunning()) {
+            world.pause();
             PauseScreen pauseScreen = new PauseScreen();
             getWorld().addObject(pauseScreen, 450, 245);
             Mute m = new Mute();
@@ -45,17 +59,17 @@ public class FertigVorlaeufig extends Shop {
             SettingsButton s = new SettingsButton();
             getWorld().addObject(s, 450, 625);
         } else {
-            if(Greenfoot.mouseClicked(this) && K == 1) {
-                K = 0;
+            if(Greenfoot.mouseClicked(this) && !world.isRunning()) {
+                world.resume();
             }
         }
     }
 
-    public void druecken2() {
-        if(K == 0) {
+    
+    public void repaint() {
+        if(world.isRunning()) {
             setImage("images/pause.png");
-        }
-        if(K == 1) {
+        } else {
             setImage("images/play.png");
         }
     }

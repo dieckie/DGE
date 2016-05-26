@@ -6,7 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Shop extends OpenVariable {
+public class Shop extends Actor {
 
     private boolean UI = false;
 

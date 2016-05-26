@@ -9,14 +9,12 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Feld3 extends Down {
 
     Welt1 world = null;
-    int coin;
 
     /**
      * Act - do whatever the Feld3 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
         world = (Welt1) getWorld();
-        coin = world.coins.coins;
         List();
         Kauf();
     }
@@ -25,28 +23,28 @@ public class Feld3 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(F3 == 1) {
+        if(OpenVariable.F3 == 1) {
             setImage("1.png");
         }
-        if(F3 == 2) {
+        if(OpenVariable.F3 == 2) {
             setImage("2.png");
         }
-        if(F3 == 3) {
+        if(OpenVariable.F3 == 3) {
             setImage("3.png");
         }
-        if(F3 == 4) {
+        if(OpenVariable.F3 == 4) {
             setImage("4.png");
         }
-        if(F3 == 5) {
+        if(OpenVariable.F3 == 5) {
             setImage("5.png");
         }
-        if(F3 == 6) {
+        if(OpenVariable.F3 == 6) {
             setImage("6.png");
         }
-        if(F3 == 7) {
+        if(OpenVariable.F3 == 7) {
             setImage("7.png");
         }
-        if(F3 == 8) {
+        if(OpenVariable.F3 == 8) {
             setImage("8.png");
         }
     }
@@ -55,11 +53,11 @@ public class Feld3 extends Down {
      * erstellt Wand bei anklicken und zieht die Muenzen ab (Objekt kann nur gekauft werden, wenn genuegend Muenzen vorhanden sind).
      */
     public void Kauf() {
-        if(coin >= 8) {
-            if(F3 == 4 && Greenfoot.mouseClicked(this)) {
+        if(world.coins.coins >= 8) {
+            if(OpenVariable.F3 == 4 && Greenfoot.mouseClicked(this)) {
                 Wand Wand = new Wand();
                 getWorld().addObject(Wand, 200, 200);
-                K = 1;
+                world.pause();
                 world.coins.lostCoins(8);
             }
         }

@@ -12,13 +12,16 @@ public class Feld1 extends Down {
     boolean _1pressed = false;
     int oldF1 = -1;
     Welt1 world = null;
+    
+    boolean init = true;
 
     /**
      * Act - do whatever the Feld1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(world == null) {
+        if(init) {
             world = (Welt1) getWorld();
+            init = false;
         }
         coin = world.coins.coins;
         List();
@@ -29,10 +32,10 @@ public class Feld1 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(oldF1 != F1) {
-            oldF1 = F1;
-            if(F1 >= 1 && F1 <= 8) {
-                setImage(F1 + ".png");
+        if(oldF1 != OpenVariable.F1) {
+            oldF1 = OpenVariable.F1;
+            if(OpenVariable.F1 >= 1 && OpenVariable.F1 <= 8) {
+                setImage(OpenVariable.F1 + ".png");
             }
         }
     }
@@ -42,10 +45,10 @@ public class Feld1 extends Down {
      */
     public void Kauf() {
         if(world.coins.coins >= 5) {
-            if(F1 == 1 && (Greenfoot.mouseClicked(this))) {
+            if(OpenVariable.F1 == 1 && (Greenfoot.mouseClicked(this))) {
                 Spikes spikes = new Spikes();
                 getWorld().addObject(spikes, 200, 200);
-                K = 1;
+                world.pause();
                 world.coins.lostCoins(5);
             }
             if(Greenfoot.isKeyDown("1")) {
@@ -53,7 +56,7 @@ public class Feld1 extends Down {
                     _1pressed = true;
                     Spikes spikes = new Spikes();
                     getWorld().addObject(spikes, 200, 200);
-                    K = 1;
+                    world.pause();
                     world.coins.lostCoins(5);
                 }
             } else {
@@ -61,7 +64,7 @@ public class Feld1 extends Down {
             }
         }
         if(coin >= 10) {
-            if(F1 == 2 && Greenfoot.mouseClicked(this) && world.eichhoernchen.getHealth() < 10) {
+            if(OpenVariable.F1 == 2 && Greenfoot.mouseClicked(this) && world.eichhoernchen.getHealth() < 10) {
                 world.eichhoernchen.heal(1);
                 world.coins.lostCoins(10);
             }

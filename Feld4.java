@@ -26,10 +26,10 @@ public class Feld4 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(oldF4 != F4) {
-            oldF4 = F4;
-            if(F4 >= 1 && F4 <= 8) {
-                setImage(F4 + ".png");
+        if(oldF4 != OpenVariable.F4) {
+            oldF4 = OpenVariable.F4;
+            if(OpenVariable.F4 >= 1 && OpenVariable.F4 <= 8) {
+                setImage(OpenVariable.F4 + ".png");
             }
         }
     }
@@ -38,11 +38,11 @@ public class Feld4 extends Down {
      * erstellt Wand bei anklicken und zieht die Muenzen ab (Objekt kann nur gekauft werden, wenn genuegend Muenzen vorhanden sind).
      */
     public void Kauf() {
-        if(C >= 8) {
-            if(F4 == 4 && Greenfoot.mouseClicked(this)) {
+        if(world.coins.coins >= 8) {
+            if(OpenVariable.F4 == 4 && Greenfoot.mouseClicked(this)) {
                 Wand Wand = new Wand();
                 getWorld().addObject(Wand, 200, 200);
-                K = 1;
+                world.pause();
                 world.coins.lostCoins(8);
             }
         }

@@ -6,7 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Wand extends Up {
+public class Wand extends Shop {
 
     int button, mouseY, mouseX = 0;
 

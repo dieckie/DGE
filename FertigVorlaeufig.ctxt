@@ -7,5 +7,5 @@ comment1.text=\r\n\ setzt\ den\ Spielverlauf\ fort.\r\n
 comment2.params=
 comment2.target=void\ druecken()
 comment3.params=
-comment3.target=void\ druecken2()
+comment3.target=void\ repaint()
 numComments=4

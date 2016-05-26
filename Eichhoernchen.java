@@ -12,13 +12,15 @@ public class Eichhoernchen extends OpenVariable {
     long time = 0;
     int health = 10;
 
+    /** true is left, false is right */
+    boolean direction = false;
+
     public void act() {
         if(((Welt1) getWorld()).isRunning()) {
             bewegen();
             schiessen();
             gameover();
             coinceat();
-            Wellen();
         }
     }
 
@@ -51,21 +53,15 @@ public class Eichhoernchen extends OpenVariable {
      */
     private void schiessen() {
         if(System.currentTimeMillis() - time > SHOT_INTERVAL) {
-            if(e == 0) {
-                if(Greenfoot.isKeyDown("space")) {
-                    Projektil projektil = new Projektil();
-                    getWorld().addObject(projektil, getX() + 22, getY() + 17);
-                    projektil.setRotation(+90);
-                    time = System.currentTimeMillis();
-                }
-            }
-            if(e == 1) {
-                if(Greenfoot.isKeyDown("space")) {
-                    Projektil projektil = new Projektil();
+            if(Greenfoot.isKeyDown("space")) {
+                Projektil projektil = new Projektil();
+                if(direction){
                     getWorld().addObject(projektil, getX() - 20, getY() + 17);
-                    projektil.setRotation(+90);
-                    time = System.currentTimeMillis();
+                } else {
+                    getWorld().addObject(projektil, getX() + 22, getY() + 17);
                 }
+                projektil.setRotation(90);
+                time = System.currentTimeMillis();
             }
         }
     }
@@ -77,37 +73,22 @@ public class Eichhoernchen extends OpenVariable {
         if(getX() + 28 >= 880) {
             setLocation(879 - 28, getY());
         } else {
-            if(Greenfoot.isKeyDown("D") && Greenfoot.isKeyDown("shift")) {
+            if(Greenfoot.isKeyDown("D") ) {
                 setImage("eich-rechts.png");
-                move(3);
-                e = 0;
-            } else {
-                if(Greenfoot.isKeyDown("D")) {
-                    setImage("eich-rechts.png");
-                    move(1);
-                    e = 0;
+                move(1);
+                direction = false;
+                if(Greenfoot.isKeyDown("shift")) {
+                    move(2);
                 }
             }
-            if(Greenfoot.isKeyDown("A") && Greenfoot.isKeyDown("shift")) {
+            if(Greenfoot.isKeyDown("A")) {
                 setImage("eichhoernchenlauf1.png");
-                move(-3);
-                e = 1;
-            } else {
-                if(Greenfoot.isKeyDown("A")) {
-                    setImage("eichhoernchenlauf1.png");
-                    move(-1);
-                    e = 1;
+                move(-1);
+                direction = true;
+                if(Greenfoot.isKeyDown("shift")) {
+                    move(-2);
                 }
             }
-        }
-    }
-
-    /**
-     * naechste Welle.
-     */
-    public void Wellen() {
-        if(d == t && s_d == s_t) {
-            W++;
         }
     }
 

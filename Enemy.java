@@ -21,7 +21,6 @@ public class Enemy extends Actor {
         OpenVariable.d++;
         world.coins.earnCoins(1);
         fatality.setVolume(Settings.volume);
-        System.out.println(Settings.volume);
         fatality.play();
     }
 }
