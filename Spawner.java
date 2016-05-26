@@ -6,7 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Spawner extends Actor {
+public class Spawner extends OpenVariable {
 
     Enemy enemy;
     int interval;
@@ -37,6 +37,7 @@ public class Spawner extends Actor {
      * Act - do whatever the Spawner wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        if(K==0){
         acts++;
         if(acts > interval) {
             acts = 0;
@@ -46,5 +47,6 @@ public class Spawner extends Actor {
                 getWorld().removeObject(this);
             }
         }
+    }
     }
 }
