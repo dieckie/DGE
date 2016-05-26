@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Wellen extends OpenVariable {
+public class Wellen extends Actor {
 
     public Wellen() {
         // try {
@@ -61,9 +61,9 @@ public class Wellen extends OpenVariable {
             } else {
                 welle++;
             }
-            saveWaves = welle;
-            saveCoins = world.coins.coins;
-            saveHealth = world.eichhoernchen.getHealth();
+            OpenVariable.saveWaves = welle;
+            OpenVariable.saveCoins = world.coins.coins;
+            OpenVariable.saveHealth = world.eichhoernchen.getHealth();
             Speichern.speichern();
             String[] spawners = wellen[welle].split("\\|");
             for(int i = 0; i < spawners.length; i++) {

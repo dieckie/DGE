@@ -26,28 +26,28 @@ public class Feld2 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(F2 == 1) {
+        if(OpenVariable.F2 == 1) {
             setImage("1.png");
         }
-        if(F2 == 2) {
+        if(OpenVariable.F2 == 2) {
             setImage("2.png");
         }
-        if(F2 == 3) {
+        if(OpenVariable.F2 == 3) {
             setImage("3.png");
         }
-        if(F2 == 4) {
+        if(OpenVariable.F2 == 4) {
             setImage("4.png");
         }
-        if(F2 == 5) {
+        if(OpenVariable.F2 == 5) {
             setImage("5.png");
         }
-        if(F2 == 6) {
+        if(OpenVariable.F2 == 6) {
             setImage("6.png");
         }
-        if(F2 == 7) {
+        if(OpenVariable.F2 == 7) {
             setImage("7.png");
         }
-        if(F2 == 8) {
+        if(OpenVariable.F2 == 8) {
             setImage("8.png");
         }
     }
@@ -57,15 +57,15 @@ public class Feld2 extends Down {
      */
     public void Kauf() {
         if(coin >= 8) {
-            if(F2 == 4 && Greenfoot.mouseClicked(this)) {
+            if(OpenVariable.F2 == 4 && Greenfoot.mouseClicked(this)) {
                 Wand Wand = new Wand();
                 getWorld().addObject(Wand, 200, 200);
-                K = 1;
+                world.pause();
                 world.coins.lostCoins(8);
             }
         }
         if(coin >= 10) {
-            if(F2 == 2 && Greenfoot.mouseClicked(this) && world.eichhoernchen.getHealth() < 10) {
+            if(OpenVariable.F2 == 2 && Greenfoot.mouseClicked(this) && world.eichhoernchen.getHealth() < 10) {
                 world.eichhoernchen.heal(1);
                 world.coins.lostCoins(10);
             }

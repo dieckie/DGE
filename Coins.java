@@ -7,7 +7,7 @@ import java.awt.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Coins extends OpenVariable {
+public class Coins extends Actor {
 
     int coins = 0;
 

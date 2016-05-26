@@ -16,20 +16,17 @@ public class Up extends Shop {
     }
 
     /**
-     * Veraendert die Variablen fuer die Bildauswahl der Felder.
+     * Veraendert die Variablen fuer die Bildauswahl der felder.
      */
     public void scroll() {
         if(Greenfoot.mouseClicked(this)) {
-            K = 1;
-            if(F1 == 1) {
-                F1 = 1;
-            } else {
-                F1--;
-                F2--;
-                F3--;
-                F4--;
-                F5--;
-                F6--;
+            if(OpenVariable.F1 != 1) {
+                OpenVariable.F1--;
+                OpenVariable.F2--;
+                OpenVariable.F3--;
+                OpenVariable.F4--;
+                OpenVariable.F5--;
+                OpenVariable.F6--;
             }
         }
     }

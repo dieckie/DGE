@@ -19,28 +19,28 @@ public class Feld6 extends Down {
      * bestimmt welches Bild das Feld bei welchem status annehmen soll.
      */
     public void List() {
-        if(F6 == 1) {
+        if(OpenVariable.F6 == 1) {
             setImage("1.png");
         }
-        if(F6 == 2) {
+        if(OpenVariable.F6 == 2) {
             setImage("2.png");
         }
-        if(F6 == 3) {
+        if(OpenVariable.F6 == 3) {
             setImage("3.png");
         }
-        if(F6 == 4) {
+        if(OpenVariable.F6 == 4) {
             setImage("4.png");
         }
-        if(F6 == 5) {
+        if(OpenVariable.F6 == 5) {
             setImage("5.png");
         }
-        if(F6 == 6) {
+        if(OpenVariable.F6 == 6) {
             setImage("6.png");
         }
-        if(F6 == 7) {
+        if(OpenVariable.F6 == 7) {
             setImage("7.png");
         }
-        if(F6 == 8) {
+        if(OpenVariable.F6 == 8) {
             setImage("8.png");
         }
     }

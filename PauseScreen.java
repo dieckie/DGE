@@ -8,15 +8,17 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PauseScreen extends FertigVorlaeufig {
 
-    /**
-     * Act - do whatever the pause_screen wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean init = true;
+    Welt1 world;
+    
     public void act() {
-        // Add your action code here.
-        if(Greenfoot.mouseClicked(this)) {
-            K = 0;
+        if(init){
+            world = (Welt1) getWorld();
         }
-        if(K == 0 && this != null) {
+        if(Greenfoot.mouseClicked(this)) {
+           world.pause();
+        }
+        if(world.isRunning() && this != null) {
             getWorld().removeObject(this);
         }
     }

@@ -11,11 +11,17 @@ public class WandPlatziert extends Wand {
     private int time = 0;
     Actor ratte;
     Actor schlange;
+    
+    Welt1 world;
+    boolean init = true;
 
     /**
      * Act - do whatever the Wand_platziert wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        if(init){
+            world = (Welt1) getWorld();
+        }
         anhalten();
     }
 
@@ -25,7 +31,7 @@ public class WandPlatziert extends Wand {
     private void anhalten() {
         ratte = getOneIntersectingObject(Ratte.class);
         schlange = getOneIntersectingObject(Schlange.class);
-        if(K == 0) {
+        if(world.isRunning()) {
             time++;
             if(time <= 1500) {
                 if(ratte != null || (schlange != null)) {

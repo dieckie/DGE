@@ -17,12 +17,19 @@ public class SpikesPlatziert extends Spikes {
      * wie oft hat Spike schon getroffen?
      */
     private int hit = 0;
+    
+    boolean init = true;
+    Welt1 world;
 
     /**
      * Die Bedingung sorgt dafuer, dass die Spikes nur schaden machen, wenn man das Spiel fortsetzen will.
      */
     public void act() {
-        if(K == 0) {
+        if(init){
+            init = false;
+            world = (Welt1) getWorld();
+        }
+        if(world.isRunning()) {
             spikesSchaden();
             entfernen();
         }
