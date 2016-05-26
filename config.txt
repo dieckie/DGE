@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 dieckie dieckie 2 1 10 1
+=======
+<<<<<<< HEAD
+Koljenka Kolja2000 8 53 10 3
+=======
+dieckie dieckie 12 79 6 1
+>>>>>>> 208da4bf7ca9fabc7a7f279a7ed9df6de0d3aac7
+>>>>>>> 4f7f3e24ede12ce8566e0a14e63f157ab20bdd1a
