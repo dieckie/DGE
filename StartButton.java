@@ -1,3 +1,4 @@
+
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -6,7 +7,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class StartButton extends OpenVariable {
+public class StartButton extends Actor {
 
     /**
      * oeffnet bei anklicken oder "Enter" druecken die Welt_1.

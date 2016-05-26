@@ -6,7 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Herzen extends OpenVariable {
+public class Herzen extends Actor {
 
     /**
      * Act - do whatever the Herzen wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
