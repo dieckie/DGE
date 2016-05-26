@@ -29,9 +29,7 @@ public class Down extends Shop {
     public void scroll() {
         if(Greenfoot.mouseClicked(this)) {
            world.pause();
-            if(OpenVariable.F6 == OpenVariable.g) {
-                OpenVariable.F6 = OpenVariable.g;
-            } else {
+            if(OpenVariable.F6 != Shop.MAX_ITEMS) {
                 OpenVariable.F1++;
                 OpenVariable.F2++;
                 OpenVariable.F3++;

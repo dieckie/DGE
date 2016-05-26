@@ -12,58 +12,14 @@ public class OpenVariable extends Actor {
     static String username, password;
     static int saveCoins, saveHealth, saveWaves;
     /*
-     * anzahl der Coins.
-     */
-    static int C = 0;
-    /*
      * macht dass man nur einen weiteren spieler hinzufuegen kann
      */
     static int x = 0;
-    /*
-     * gibt die projektilposition an
-     */
-    static int e = 0;
-    /**
-     * Gegner(Ratte)
-     */
-    /*
-     * Anzahl der pro Welle zu spawnenden Ratten
-     */
-    static int t = 1;
-    /*
-     * bereits gespawnte Ratten
-     */
-    static int z = 0;
-    static int j = 200;
-    /*
-     * bereits getoetete Ratten
-     */
-    static int d = 0;
-    static double gs = 1;
+
     static int schadenR = 0;
     static int wandX = 0;
     static int wandY = 0;
-    /**
-     * Gegner(Schlange)
-     */
-    /*
-     * Anahl der pro Welle zu spawnenden Schlangen
-     */
-    static int s_t = 0;
-    /*
-     * bereits gespawnte Schlangen
-     */
-    static int s_z = 0;
-    static int s_j = 500;
-    /*
-     * bereits getoetete Schlangen
-     */
-    static int s_d = 0;
-    static double s_gs = 1;
-    /*
-     * Leben(Spieler)
-     */
-    static int l = 10;
+
     /*
      * spiel verloren
      */
@@ -82,10 +38,6 @@ public class OpenVariable extends Actor {
     static int F5 = 5;
     static int F6 = 6;
     /*
-     * maximale Anzahl an Gegenstaenden im Shop
-     */
-    static int g = 8;
-    /*
      * stoppt die Gegner und den Spieler
      */
     static int K = 0;
@@ -93,10 +45,6 @@ public class OpenVariable extends Actor {
      * objekt aus Shop platzierbar
      */
     static int m = 0;
-    /*
-     * naechste Welle
-     */
-    static int W = 1;
     /*
      * haelt die Gegner an
      */
@@ -106,19 +54,8 @@ public class OpenVariable extends Actor {
      * alle Variablen werden bei einem Neustart auf den Startwert zurueckgesetzt.
      */
     public static void reset() {
-        // C=0;
         x = 0;
-        e = 0;
-        t = 1;
-        z = 0;
-        j = 200;
-        d = 0;
         schadenR = 0;
-        s_t = 0;
-        s_z = 0;
-        s_j = 500;
-        s_d = 0;
-        // l = 10;
         gameover = false;
         Win = false;
         F1 = 1;
@@ -127,10 +64,8 @@ public class OpenVariable extends Actor {
         F4 = 4;
         F5 = 5;
         F6 = 6;
-        g = 8;
         K = 0;
         m = 0;
-        // W = 1;
         wandX = 0;
         wandY = 0;
     }

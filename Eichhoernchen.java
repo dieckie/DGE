@@ -20,7 +20,6 @@ public class Eichhoernchen extends OpenVariable {
             bewegen();
             schiessen();
             gameover();
-            coinceat();
         }
     }
 
@@ -36,15 +35,6 @@ public class Eichhoernchen extends OpenVariable {
             saveWaves = 1;
             saveCoins = 0;
             saveHealth = 10;
-        }
-    }
-
-    /**
-     * man kann mit einem Tastendruck zu Vorfuehrzwecken beliebig viele Coins hinzu fuegen.
-     */
-    private void coinceat() {
-        if(Greenfoot.isKeyDown("c")) {
-            C++;
         }
     }
 
