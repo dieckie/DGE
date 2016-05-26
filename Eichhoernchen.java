@@ -35,6 +35,7 @@ public class Eichhoernchen extends Actor {
             Config.saveWaves = 1;
             Config.saveCoins = 0;
             Config.saveHealth = 10;
+            Config.speichern();
         }
     }
 
