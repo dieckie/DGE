@@ -36,7 +36,7 @@ public class Schlange extends Enemy {
      */
     private boolean SB = false;
     boolean init = true;
-
+    int earnedCoins;
     /**
      * Act - do whatever the Ratte wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -143,9 +143,8 @@ public class Schlange extends Enemy {
         lastHurtS = System.currentTimeMillis();
         Kick.setVolume(15);
         Kick.play();
-        if(schadenS >= 3) {
-            world.coins.earnCoins(1);
-            died();
+        if(schadenS >= 3) {            
+            died(getCoinEarnings());
         }
     }
 
@@ -155,5 +154,20 @@ public class Schlange extends Enemy {
 
     public Schlange newInstance() {
         return new Schlange();
+    }
+    @Override
+    public int getCoinEarnings(){
+        switch(world.getWellen().getDifficulty()){
+            case 1: 
+            earnedCoins = 2;
+            break;
+            case 2:
+            earnedCoins = 2;
+            break;
+            case 3:
+            earnedCoins = 3;
+            break;
+        }
+        return earnedCoins;
     }
 }

@@ -37,7 +37,7 @@ public class Ratte extends Enemy {
     private boolean SB = false;
     private int x, y, w = 0;
     boolean init = true;
-
+    int earnedCoins=0;
     /**
      * Act - do whatever the Ratte wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -143,7 +143,7 @@ public class Ratte extends Enemy {
         Kick.setVolume(15);
         Kick.play();
         if(schaden >= 5) {
-            died();
+            died(getCoinEarnings());
         }
     }
 
@@ -156,5 +156,20 @@ public class Ratte extends Enemy {
     @Override
     public Ratte newInstance() {
         return new Ratte();
+    }
+    @Override
+    public int getCoinEarnings(){
+        switch(world.getWellen().getDifficulty()){
+            case 1: 
+            earnedCoins = 1;
+            break;
+            case 2:
+            earnedCoins = 1;
+            break;
+            case 3:
+            earnedCoins = 2;
+            break;
+        }
+        return earnedCoins;
     }
 }
