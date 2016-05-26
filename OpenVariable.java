@@ -23,7 +23,7 @@ public class OpenVariable extends Actor {
     /*
      * spiel verloren
      */
-    static boolean gameover = false;
+    static boolean gameover = false; 
     /*
      * spiel gewonnen
      */

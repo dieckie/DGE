@@ -32,18 +32,18 @@ public class Wellen extends Actor {
         try {
             int lines = 0;
             String line;
-            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen.txt")));
+            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen1.txt")));
             while(br.readLine() != null) {
                 lines++;
             }
             wellen = new String[lines + 1];
-            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen.txt")));
+            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen1.txt")));
             for(int i = 1; ((line = br.readLine()) != null); i++) {
                 wellen[i] = line;
             }
             br.close();
         } catch(IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
     }
 
