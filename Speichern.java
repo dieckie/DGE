@@ -27,7 +27,7 @@ public class Speichern extends FertigVorlaeufig {
                 try {
                     String body = "username=" + URLEncoder.encode(username, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8") + "&wave=" + URLEncoder.encode(saveWaves + "", "UTF-8") + "&coins=" + URLEncoder.encode(saveCoins + "", "UTF-8") + "&health="
                             + URLEncoder.encode(saveHealth + "", "UTF-8");
-                    // System.out.println( body );
+                    System.out.println(body);
                     URL url = new URL("http://dieckie.bplaced.net/kolja/update.php");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");

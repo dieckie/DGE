@@ -123,8 +123,7 @@ public class Eichhoernchen extends OpenVariable {
         return health;
     }
 
-    public void setHealth(int health){
-        this.health=health;        
+    public void setHealth(int health) {
+        this.health = health;
     }
 }
- 

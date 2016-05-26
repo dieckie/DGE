@@ -5,15 +5,15 @@ import java.io.*;
 public class Config extends Config1 {
 
     BufferedReader br;
+    Welt1 w;
 
-    public Config(File f) {
+    public Config(File f, Welt1 w) {
         br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("config.txt")));
+        this.w = w;
     }
 
     public void config() {
-        Welt1 w = (Welt1)getWorld();
         try {
-            
             String line = br.readLine();
             if(line != null) {
                 // String text = s.nextLine();

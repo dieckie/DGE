@@ -106,9 +106,6 @@ public class OpenVariable extends Actor {
      * alle Variablen werden bei einem Neustart auf den Startwert zurueckgesetzt.
      */
     public static void reset() {
-        File f = new File("config.txt");
-        Config c = new Config(f);
-        c.config();
         // C=0;
         x = 0;
         e = 0;

@@ -14,8 +14,6 @@ public class Welt1 extends World {
     Eichhoernchen eichhoernchen;
     Wellen wellen;
     Coins coins;
-    
-    int menustate = 0;
 
     /**
      * Constructor for objects of class Welt_1.
@@ -33,7 +31,6 @@ public class Welt1 extends World {
      * Bereite die Welt fuer den Programmstart vor. Das heisst: Erzeuge die Anfangs- Objekte und fuege sie der Welt hinzu.
      */
     private void prepare() {
-        OpenVariable.reset();
         musik = new Musik();
         addObject(musik, 0, 0);
         P1 p1 = new P1();
@@ -49,12 +46,12 @@ public class Welt1 extends World {
         Border border = new Border();
         addObject(border, 902, 360);
         Shop shop = new Shop();
-        addObject(shop, 1092, 360); 
+        addObject(shop, 1092, 360);
         // RattenSpawner Rs = new RattenSpawner();
         // addObject(Rs,49,684);
         // SchlangenSpawner Ss = new SchlangenSpawner(eichhoernchen);
         // addObject(Ss,49,684);
-        Greenfoot.setSpeed(60); 
+        Greenfoot.setSpeed(60);
         Feld1 feld1 = new Feld1();
         addObject(feld1, 1091, 62);
         Feld2 feld2 = new Feld2();
@@ -76,7 +73,6 @@ public class Welt1 extends World {
         herzen.setLocation(200, 30);
         coins = new Coins();
         addObject(coins, 730, 30);
-        coins.draw();
         FertigVorlaeufig fertigVorlaeufig = new FertigVorlaeufig();
         addObject(fertigVorlaeufig, 27, 26);
         Debug debug = new Debug();
@@ -85,6 +81,11 @@ public class Welt1 extends World {
         down.setLocation(1269, 711);
         wellen = new Wellen();
         addObject(wellen, 495, 25);
+        File f = new File("config.txt");
+        Config c = new Config(f, this);
+        c.config();
+        OpenVariable.reset();
+        coins.draw();
     }
 
     public Eichhoernchen getEichhoernchen() {

@@ -51,11 +51,16 @@ public class Wellen extends OpenVariable {
     int welle = 0;
     private int h = 0;
     int livingEnemys = 0;
+    boolean init = true;
 
     public void act() {
         if(livingEnemys == 0) {
             Welt1 world = (Welt1) getWorld();
-            welle++;
+            if(init) {
+                init = false;
+            } else {
+                welle++;
+            }
             saveWaves = welle;
             saveCoins = world.coins.coins;
             saveHealth = world.eichhoernchen.getHealth();

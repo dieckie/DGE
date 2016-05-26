@@ -13,10 +13,10 @@ public class PauseScreen extends FertigVorlaeufig {
      */
     public void act() {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this)){
-            K=0;}
+        if(Greenfoot.mouseClicked(this)) {
+            K = 0;
+        }
         if(K == 0 && this != null) {
-            
             getWorld().removeObject(this);
         }
     }
