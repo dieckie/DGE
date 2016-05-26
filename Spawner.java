@@ -37,16 +37,16 @@ public class Spawner extends OpenVariable {
      * Act - do whatever the Spawner wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(K==0){
-        acts++;
-        if(acts > interval) {
-            acts = 0;
-            getWorld().addObject(enemy.newInstance(), getX(), getY());
-            enemysSpawned++;
-            if(enemysSpawned >= amount) {
-                getWorld().removeObject(this);
+        if(((Welt1)getWorld()).isRunning()){
+            acts++;
+            if(acts > interval) {
+                acts = 0;
+                getWorld().addObject(enemy.newInstance(), getX(), getY());
+                enemysSpawned++;
+                if(enemysSpawned >= amount) {
+                    getWorld().removeObject(this);
+                }
             }
         }
-    }
     }
 }
