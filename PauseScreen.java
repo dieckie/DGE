@@ -10,13 +10,13 @@ public class PauseScreen extends FertigVorlaeufig {
 
     boolean init = true;
     Welt1 world;
-    
+
     public void act() {
-        if(init){
+        if(init) {
             world = (Welt1) getWorld();
         }
         if(Greenfoot.mouseClicked(this)) {
-           world.pause();
+            world.pause();
         }
         if(world.isRunning() && this != null) {
             getWorld().removeObject(this);

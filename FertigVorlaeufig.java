@@ -10,29 +10,26 @@ public class FertigVorlaeufig extends Shop {
 
     boolean isEscPressed = false;
     boolean init = true;
-
     Welt1 world;
-
     boolean oldRunning = false;
 
     /**
      * setzt den Spielverlauf fort.
      */
     public void act() {
-        if(init){
-            world = (Welt1)getWorld();
+        if(init) {
+            world = (Welt1) getWorld();
             init = false;
-
         }
         druecken();
-        if(oldRunning != world.isRunning()){
+        if(oldRunning != world.isRunning()) {
             repaint();
             oldRunning = world.isRunning();
         }
     }
 
     public void druecken() {
-        //TODO das hier besser zusammen fügen.
+        // TODO das hier besser zusammen fügen.
         if(Greenfoot.isKeyDown("escape")) {
             if(world.isRunning() && !isEscPressed) {
                 world.pause();
@@ -65,7 +62,6 @@ public class FertigVorlaeufig extends Shop {
         }
     }
 
-    
     public void repaint() {
         if(world.isRunning()) {
             setImage("images/pause.png");

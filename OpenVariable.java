@@ -15,15 +15,13 @@ public class OpenVariable extends Actor {
      * macht dass man nur einen weiteren spieler hinzufuegen kann
      */
     static int x = 0;
-
     static int schadenR = 0;
     static int wandX = 0;
     static int wandY = 0;
-
     /*
      * spiel verloren
      */
-    static boolean gameover = false; 
+    static boolean gameover = false;
     /*
      * spiel gewonnen
      */

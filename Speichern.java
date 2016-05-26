@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * @version (a version number or a date)
  */
 public class Speichern {
-    
+
     public static void speichern() {
         ExecutorService exe = Executors.newFixedThreadPool(1);
         exe.execute(new Runnable() {
@@ -18,9 +18,9 @@ public class Speichern {
             @Override
             public void run() {
                 try {
-                    String body = "username=" + URLEncoder.encode(OpenVariable.username, "UTF-8") + "&password=" + URLEncoder.encode(OpenVariable.password, "UTF-8") + "&wave=" + URLEncoder.encode(OpenVariable.saveWaves + "", "UTF-8") + "&coins=" + URLEncoder.encode(OpenVariable.saveCoins + "", "UTF-8") + "&health="
-                            + URLEncoder.encode(OpenVariable.saveHealth + "", "UTF-8");
-                    //System.out.println(body);
+                    String body = "username=" + URLEncoder.encode(OpenVariable.username, "UTF-8") + "&password=" + URLEncoder.encode(OpenVariable.password, "UTF-8") + "&wave=" + URLEncoder.encode(OpenVariable.saveWaves + "", "UTF-8") + "&coins="
+                            + URLEncoder.encode(OpenVariable.saveCoins + "", "UTF-8") + "&health=" + URLEncoder.encode(OpenVariable.saveHealth + "", "UTF-8");
+                    // System.out.println(body);
                     URL url = new URL("http://dieckie.bplaced.net/kolja/update.php");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");

@@ -11,12 +11,11 @@ public class SettingsButton extends FertigVorlaeufig {
     /**
      * Act - do whatever the Settings wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
     Welt1 world;
     boolean init = true;
-    
+
     public void act() {
-        if(init){
+        if(init) {
             init = false;
             world = (Welt1) getWorld();
         }

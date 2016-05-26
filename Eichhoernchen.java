@@ -6,18 +6,16 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Eichhoernchen extends OpenVariable {
+public class Eichhoernchen extends Actor {
 
     public int SHOT_INTERVAL = 300;
     long time = 0;
     int health = 10;
     Welt1 w;
-
     /** true is left, false is right */
     boolean direction = false;
 
     public void act() {
-        
         if(((Welt1) getWorld()).isRunning()) {
             bewegen();
             schiessen();
@@ -30,13 +28,13 @@ public class Eichhoernchen extends OpenVariable {
      */
     public void gameover() {
         if(health <= 0) {
-            gameover = true;
+            OpenVariable.gameover = true;
         }
-        if(gameover) {
+        if(OpenVariable.gameover) {
             Greenfoot.setWorld(new Gameover());
-            saveWaves = 1;
-            saveCoins = 0;
-            saveHealth = 10;
+            OpenVariable.saveWaves = 1;
+            OpenVariable.saveCoins = 0;
+            OpenVariable.saveHealth = 10;
         }
     }
 
@@ -47,7 +45,7 @@ public class Eichhoernchen extends OpenVariable {
         if(System.currentTimeMillis() - time > SHOT_INTERVAL) {
             if(Greenfoot.isKeyDown("space")) {
                 Projektil projektil = new Projektil();
-                if(direction){
+                if(direction) {
                     getWorld().addObject(projektil, getX() - 20, getY() + 17);
                 } else {
                     getWorld().addObject(projektil, getX() + 22, getY() + 17);
@@ -65,7 +63,7 @@ public class Eichhoernchen extends OpenVariable {
         if(getX() + 28 >= 880) {
             setLocation(879 - 28, getY());
         } else {
-            if(Greenfoot.isKeyDown("D") ) {
+            if(Greenfoot.isKeyDown("D")) {
                 setImage("eich-rechts.png");
                 move(1);
                 direction = false;
@@ -99,23 +97,22 @@ public class Eichhoernchen extends OpenVariable {
     public void setHealth(int health) {
         this.health = health;
     }
-    
-    public int getShotInterval(){
-     return SHOT_INTERVAL;
+
+    public int getShotInterval() {
+        return SHOT_INTERVAL;
     }
-    public void setShotInterval(int interval){
+
+    public void setShotInterval(int interval) {
         SHOT_INTERVAL = interval;
     }
-    
-
     // public void initDifficulty(){
-        // switch(w.getWellen().getDifficulty()){
-            // case 1: SHOT_INTERVAL = 200;
-            // break;
-            // case 2: SHOT_INTERVAL = 300;
-            // break;
-            // case 3: SHOT_INTERVAL = 400;
-            // break;
-        // }
+    // switch(w.getWellen().getDifficulty()){
+    // case 1: SHOT_INTERVAL = 200;
+    // break;
+    // case 2: SHOT_INTERVAL = 300;
+    // break;
+    // case 3: SHOT_INTERVAL = 400;
+    // break;
+    // }
     // }
 }

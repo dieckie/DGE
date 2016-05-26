@@ -9,7 +9,6 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shop extends Actor {
 
     private boolean UI = false;
-    
     final static int MAX_ITEMS = 8;
 
     /**

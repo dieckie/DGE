@@ -11,7 +11,7 @@ public class Mute extends FertigVorlaeufig {
     boolean init = true;
     Musik musik;
     Welt1 world;
-    
+
     /**
      * Act - do whatever the Mute wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -26,7 +26,6 @@ public class Mute extends FertigVorlaeufig {
             getWorld().removeObject(this);
         }
         mute();
-
     }
 
     private void mute() {

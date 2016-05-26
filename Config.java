@@ -2,11 +2,11 @@ import greenfoot.*;
 import java.util.Scanner;
 import java.io.*;
 
-public class Config extends Config1 {
+public class Config extends OpenVariable {
 
     BufferedReader br;
     Welt1 w;
-    
+
     public Config(File f, Welt1 w) {
         br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("config.txt")));
         this.w = w;

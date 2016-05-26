@@ -11,7 +11,6 @@ public class WandPlatziert extends Wand {
     private int time = 0;
     Actor ratte;
     Actor schlange;
-    
     Welt1 world;
     boolean init = true;
 
@@ -19,7 +18,7 @@ public class WandPlatziert extends Wand {
      * Act - do whatever the Wand_platziert wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if(init){
+        if(init) {
             world = (Welt1) getWorld();
         }
         anhalten();

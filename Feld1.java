@@ -12,7 +12,6 @@ public class Feld1 extends Down {
     boolean _1pressed = false;
     int oldF1 = -1;
     Welt1 world = null;
-    
     boolean init = true;
 
     /**

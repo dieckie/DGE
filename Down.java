@@ -11,12 +11,11 @@ public class Down extends Shop {
     /**
      * Act - do whatever the down wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
     Welt1 world;
     boolean init = true;
-    
+
     public void act() {
-        if(init){
+        if(init) {
             init = false;
             world = (Welt1) getWorld();
         }
@@ -28,7 +27,7 @@ public class Down extends Shop {
      */
     public void scroll() {
         if(Greenfoot.mouseClicked(this)) {
-           world.pause();
+            world.pause();
             if(OpenVariable.F6 != Shop.MAX_ITEMS) {
                 OpenVariable.F1++;
                 OpenVariable.F2++;

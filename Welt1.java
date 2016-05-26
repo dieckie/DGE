@@ -14,7 +14,6 @@ public class Welt1 extends World {
     Eichhoernchen eichhoernchen;
     Wellen wellen;
     Coins coins;
-
     int menustate = 0;
 
     /**
@@ -84,12 +83,10 @@ public class Welt1 extends World {
         down.setLocation(1269, 711);
         wellen = new Wellen();
         addObject(wellen, 495, 25);
-
         File f = new File("config.txt");
         Config c = new Config(f, this);
         c.config();
         wellen.initWaves();
-        
         OpenVariable.reset();
         coins.draw();
     }
@@ -98,7 +95,7 @@ public class Welt1 extends World {
         return eichhoernchen;
     }
 
-    public Wellen getWellen(){
+    public Wellen getWellen() {
         return wellen;
     }
 
@@ -106,24 +103,27 @@ public class Welt1 extends World {
         return OpenVariable.K == 0;
     }
 
-    public void pause(){
+    public void pause() {
         OpenVariable.K = 1;
         menustate = 1;
     }
 
-    public void resume(){
+    public void resume() {
         OpenVariable.K = 0;
         menustate = 0;
     }
-    public void initDifficulty(){
-        switch(getWellen().getDifficulty()){
-            case 1: getEichhoernchen().setShotInterval(200);
+
+    public void initDifficulty() {
+        switch(getWellen().getDifficulty()) {
+        case 1:
+            getEichhoernchen().setShotInterval(200);
             break;
-            case 2: getEichhoernchen().setShotInterval(300);
+        case 2:
+            getEichhoernchen().setShotInterval(300);
             break;
-            case 3: getEichhoernchen().setShotInterval(400);
+        case 3:
+            getEichhoernchen().setShotInterval(400);
             break;
         }
     }
-
 }
