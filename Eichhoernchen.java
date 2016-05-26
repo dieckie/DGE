@@ -8,14 +8,16 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Eichhoernchen extends OpenVariable {
 
-    final int SHOT_INTERVAL = 300;
+    public int SHOT_INTERVAL = 300;
     long time = 0;
     int health = 10;
+    Welt1 w;
 
     /** true is left, false is right */
     boolean direction = false;
 
     public void act() {
+        
         if(((Welt1) getWorld()).isRunning()) {
             bewegen();
             schiessen();
@@ -97,4 +99,23 @@ public class Eichhoernchen extends OpenVariable {
     public void setHealth(int health) {
         this.health = health;
     }
+    
+    public int getShotInterval(){
+     return SHOT_INTERVAL;
+    }
+    public void setShotInterval(int interval){
+        SHOT_INTERVAL = interval;
+    }
+    
+
+    // public void initDifficulty(){
+        // switch(w.getWellen().getDifficulty()){
+            // case 1: SHOT_INTERVAL = 200;
+            // break;
+            // case 2: SHOT_INTERVAL = 300;
+            // break;
+            // case 3: SHOT_INTERVAL = 400;
+            // break;
+        // }
+    // }
 }

@@ -10,34 +10,19 @@ import java.util.Scanner;
  * @version (a version number or a date)
  */
 public class Wellen extends Actor {
-
-    public Wellen() {
-        // try {
-        // File f = new File("wellen.txt");
-        // Scanner s = new Scanner(f);
-        // int lines = 0;
-        // while(s.hasNextLine()) {
-        // s.nextLine();
-        // lines++;
-        // }
-        // s.close();
-        // s = new Scanner(f);
-        // wellen = new String[lines + 1];
-        // for(int i = 1; s.hasNextLine(); i++){
-        // wellen[i] = s.nextLine();
-        // }
-        // } catch(FileNotFoundException e) {
-        // e.printStackTrace();
-        // }
+    
+    public Wellen() {               
+    }
+    public void initWaves(){
         try {
             int lines = 0;
             String line;
-            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen1.txt")));
+            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen"+getDifficulty()+".txt")));
             while(br.readLine() != null) {
                 lines++;
             }
             wellen = new String[lines + 1];
-            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen1.txt")));
+            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen"+getDifficulty()+".txt")));
             for(int i = 1; ((line = br.readLine()) != null); i++) {
                 wellen[i] = line;
             }
@@ -45,14 +30,15 @@ public class Wellen extends Actor {
         } catch(IOException e) {
             e.printStackTrace(); 
         }
+        
     }
-
+    Welt1 w;
     String[] wellen;
     int welle = 0;
     private int h = 0;
     int livingEnemys = 0;
     boolean init = true;
-
+    int _difficulty;
     public void act() {
         if(livingEnemys == 0) {
             Welt1 world = (Welt1) getWorld();
@@ -71,6 +57,7 @@ public class Wellen extends Actor {
             }
             picture();
         }
+       
     }
 
     private void picture() {
@@ -112,5 +99,13 @@ public class Wellen extends Actor {
 
     public void enemyDied() {
         livingEnemys--;
+    }
+    
+    public int getDifficulty(){
+        return _difficulty;
+    }
+
+    public void setDifficulty(int difficulty){
+        _difficulty = difficulty;
     }
 }
