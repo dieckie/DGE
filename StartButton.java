@@ -1,4 +1,3 @@
- 
 
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo
 /**
@@ -7,17 +6,9 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo
  * @author (your name)
  * @version (a version number or a date)
  */
-public class StartButton extends Actor {
-
-    /**
-     * oeffnet bei anklicken oder "Enter" druecken die Welt_1.
-     */
-    public void act() {
-
-        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("enter")) {
-            Greenfoot.setWorld(new Welt1());
-        }
-        
-        
+public class StartButton extends Buttons {
+    @Override
+    public void action(){     
+            Greenfoot.setWorld(new Welt1());    
     }
 }
