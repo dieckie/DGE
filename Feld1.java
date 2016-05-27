@@ -1,3 +1,5 @@
+ 
+
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -48,7 +50,7 @@ public class Feld1 extends Down {
                 Spikes spikes = new Spikes();
                 getWorld().addObject(spikes, 200, 200);
                 world.pause();
-                world.coins.lostCoins(5);
+                world.coins.lostCoins(8);
             }
             if(Greenfoot.isKeyDown("1")) {
                 if(!_1pressed) {
@@ -56,7 +58,7 @@ public class Feld1 extends Down {
                     Spikes spikes = new Spikes();
                     getWorld().addObject(spikes, 200, 200);
                     world.pause();
-                    world.coins.lostCoins(5);
+                    world.coins.lostCoins(8);
                 }
             } else {
                 _1pressed = false;
