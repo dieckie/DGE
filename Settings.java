@@ -16,12 +16,14 @@ public class Settings extends FertigVorlaeufig {
      * Act - do whatever the Setting wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     boolean following = false;
-    int tonX = 0;
-    int oldTonX = -1;
+    int tonX = 0, oldTonX = -1;
+    int clickX = 0, oldClickX = -1;
     static int volume = 10;
+    static int clickVolume = 10;
 
     public Settings() {
         tonX = volume * 6;
+        clickX = clickVolume * 6;
         repaint();
     }
 
@@ -33,6 +35,10 @@ public class Settings extends FertigVorlaeufig {
                     if(mouse.getX() > 345 && mouse.getX() < 945) {
                         tonX = mouse.getX() - 345;
                     }
+                } else if(mouse.getY() > 350 && mouse.getY() < 390) {
+                    if(mouse.getX() > 345 && mouse.getX() < 945) {
+                        clickX = mouse.getX() - 345;
+                    }
                 } else if(mouse.getY() > 460 && mouse.getY() < 560) {
                     if(mouse.getX() > 500 && mouse.getX() < 800) {
                         getWorld().removeObject(this);
@@ -40,16 +46,19 @@ public class Settings extends FertigVorlaeufig {
                 }
             }
         }
-        if(tonX != oldTonX) {
+        if(tonX != oldTonX || clickX != oldClickX) {
             volume = tonX / 6;
+            clickVolume = clickX / 6;
             repaint();
         }
     }
 
     public void repaint() {
         oldTonX = tonX;
+        oldClickX = clickX;
         GreenfootImage img = new GreenfootImage("images/ui/settings/settings.png");
         img.drawImage(new GreenfootImage("images/ui/settings/regler.png"), tonX + 135, 175);
+        img.drawImage(new GreenfootImage("images/ui/settings/regler.png"), clickX + 135, 292);
         setImage(img);
     }
 }
