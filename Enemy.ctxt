@@ -2,9 +2,11 @@
 comment0.target=Enemy
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Enemy\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=Enemy\ newInstance()
-comment2.params=earnedCoins
-comment2.target=void\ died(int)
-comment3.params=
-comment3.target=int\ getCoinEarnings()
-numComments=4
+comment1.target=void\ act()
+comment2.params=
+comment2.target=Enemy\ newInstance()
+comment3.params=earnedCoins
+comment3.target=void\ died(int)
+comment4.params=
+comment4.target=int\ getCoinEarnings()
+numComments=5

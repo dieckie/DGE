@@ -29,18 +29,18 @@ public class Schlange extends Enemy {
     /*
      * Fuegt die Sounds zu Greenfoot hinzu.
      */
-    public GreenfootSound Kick = new GreenfootSound("kick.mp3");
-    public GreenfootSound Fatality = new GreenfootSound("Fatality.mp3");
+    GreenfootSound Kick = new GreenfootSound("kick.mp3");
+    GreenfootSound Fatality = new GreenfootSound("Fatality.mp3");
     /*
      * welches Schadensbild soll ausgewaehlt werden?
      */
     private boolean SB = false;
-    boolean init = true;
     int earnedCoins;
     /**
      * Act - do whatever the Ratte wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        super.act();
         if(init) {
             init = false;
             world = ((Welt1) getWorld());
@@ -146,10 +146,6 @@ public class Schlange extends Enemy {
         if(schadenS >= 3) {            
             died(getCoinEarnings());
         }
-    }
-
-    public void warten() {
-        setLocation(getX(), getY());
     }
 
     public Schlange newInstance() {

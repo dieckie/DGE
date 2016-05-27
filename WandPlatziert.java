@@ -35,10 +35,10 @@ public class WandPlatziert extends Wand {
             if(time <= 1500) {
                 if(ratte != null || (schlange != null)) {
                     if(ratte != null) {
-                        ((Ratte) getOneIntersectingObject(Ratte.class)).warten();
+                        //((Ratte) getOneIntersectingObject(Ratte.class)).warten();
                     } else {
                         if(schlange != null) {
-                            ((Schlange) getOneIntersectingObject(Schlange.class)).warten();
+                            //((Schlange) getOneIntersectingObject(Schlange.class)).warten();
                         }
                     }
                 }

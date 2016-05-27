@@ -12,7 +12,7 @@ public class Ratte extends Enemy {
      * Definiert wie lange das Bild bei einem Treffer geaendert bleibt
      */
     final int WOUND_SPRITE_DURATION = 200;
-    final int COIN_EARNING = 1;
+    
     Eichhoernchen eichhoernchen;
     Welt1 world;
     /*
@@ -36,15 +36,18 @@ public class Ratte extends Enemy {
      */
     private boolean SB = false;
     private int x, y, w = 0;
-    boolean init = true;
-    int earnedCoins=0;
+    
+    
+    public Ratte(){
+        DAMAGE = 1;
+    }
+    
     /**
      * Act - do whatever the Ratte wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        super.act();
         if(init) {
-            init = false;
-            world = ((Welt1) getWorld());
             eichhoernchen = world.getEichhoernchen();
         }
         if(world.isRunning()) {
@@ -147,29 +150,24 @@ public class Ratte extends Enemy {
         }
     }
 
-    public void warten() {
-        x = ((WandPlatziert) getOneIntersectingObject(WandPlatziert.class)).getX();
-        y = ((WandPlatziert) getOneIntersectingObject(WandPlatziert.class)).getY();
-        setLocation(x, y);
-    }
-
     @Override
     public Ratte newInstance() {
         return new Ratte();
     }
     @Override
     public int getCoinEarnings(){
+        int coins = 1;
         switch(world.getWellen().getDifficulty()){
             case 1: 
-            earnedCoins = 1;
+            coins = 1;
             break;
             case 2:
-            earnedCoins = 1;
+            coins = 1;
             break;
             case 3:
-            earnedCoins = 2;
+            coins = 2;
             break;
         }
-        return earnedCoins;
+        return coins;
     }
 }
