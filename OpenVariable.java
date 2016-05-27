@@ -10,16 +10,7 @@ import java.io.File;
  * @version (a version number or a date)
  */
 public class OpenVariable extends Actor {
-
-    //static String username, password;
-    //static int saveCoins, saveHealth, saveWaves;
-    /*
-     * macht dass man nur einen weiteren spieler hinzufuegen kann
-     */
-    static int x = 0;
-    static int schadenR = 0;
-    static int wandX = 0;
-    static int wandY = 0;
+ 
     /*
      * spiel verloren
      */
@@ -37,25 +28,11 @@ public class OpenVariable extends Actor {
     static int F4 = 4;
     static int F5 = 5;
     static int F6 = 6;
-    /*
-     * stoppt die Gegner und den Spieler
-     */
-    static int K = 0;
-    /*
-     * objekt aus Shop platzierbar
-     */
-    static int m = 0;
-    /*
-     * haelt die Gegner an
-     */
-    static boolean wand = false;
 
     /**
      * alle Variablen werden bei einem Neustart auf den Startwert zurueckgesetzt.
      */
     public static void reset() {
-        x = 0;
-        schadenR = 0;
         gameover = false;
         Win = false;
         F1 = 1;
@@ -64,9 +41,5 @@ public class OpenVariable extends Actor {
         F4 = 4;
         F5 = 5;
         F6 = 6;
-        K = 0;
-        m = 0;
-        wandX = 0;
-        wandY = 0;
     }
 }
