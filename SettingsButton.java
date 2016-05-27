@@ -13,6 +13,7 @@ public class SettingsButton extends Buttons {
      */
     Welt1 world;
     boolean init = true;
+    
     public void act(){
         super.act();
         if(init) {

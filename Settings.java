@@ -20,7 +20,7 @@ public class Settings extends FertigVorlaeufig {
     int clickX = 0, oldClickX = -1;
     static int volume = 10;
     static int clickVolume = 10;
-
+    GreenfootSound kick = new GreenfootSound("kick.mp3");
     public Settings() {
         tonX = volume * 6;
         clickX = clickVolume * 6;
@@ -42,6 +42,8 @@ public class Settings extends FertigVorlaeufig {
                 } else if(mouse.getY() > 460 && mouse.getY() < 560) {
                     if(mouse.getX() > 500 && mouse.getX() < 800) {
                         getWorld().removeObject(this);
+                        kick.setVolume(Settings.clickVolume);
+                        kick.play();
                     }
                 }
             }

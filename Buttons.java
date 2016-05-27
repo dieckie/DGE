@@ -17,7 +17,7 @@ public class Buttons extends Actor
     {
         // Add your action code here.
         if(Greenfoot.mouseClicked(this)){
-            kick.setVolume(30);
+            kick.setVolume(Settings.clickVolume);
             kick.play();
             action();
         }    

@@ -11,7 +11,8 @@ public class Mute extends Buttons {
     boolean init = true;
     Musik musik;
     Welt1 world;
-
+    int volume1;
+    int volume2;
     public void act(){
         super.act();
         if(init) {
@@ -22,6 +23,7 @@ public class Mute extends Buttons {
         if(world.isRunning() && this != null) {
             getWorld().removeObject(this);
         }
+
     }
 
     @Override
@@ -30,11 +32,16 @@ public class Mute extends Buttons {
     }
 
     private void mute() {
+
         if(!musik.mute) {
-            musik.stopMusic();
+            volume1 = Settings.volume;
+            volume2 = Settings.clickVolume;
+            Settings.volume = 0;
+            Settings.clickVolume = 0;
             musik.mute = true;
         } else if(musik.mute) {
-            musik.startMusic();
+            Settings.volume = volume1;
+            Settings.clickVolume = volume2;
             musik.mute = false;
         }
         aussehen();

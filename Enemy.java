@@ -110,7 +110,7 @@ public class Enemy extends Actor {
     public void verletzten() {
         schaden++;
         lastHurt = System.currentTimeMillis();
-        kick.setVolume(15);
+        kick.setVolume(Settings.clickVolume);
         kick.play();
         if(schaden >= HEALTH) {
             died();
