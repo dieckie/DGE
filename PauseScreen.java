@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class PauseScreen extends FertigVorlaeufig {
+public class PauseScreen extends Buttons {
 
     boolean init = true;
     Welt1 world;

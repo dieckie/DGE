@@ -45,7 +45,7 @@ public class Feld1 extends Down {
      * erstellt Spikes bei anklicken und zieht die Muenzen ab (Objekt kann nur gekauft werden, wenn genuegend Muenzen vorhanden sind).
      */
     public void Kauf() {
-        if(world.coins.coins >= 5) {
+        if(world.coins.coins >= 8) {
             if(OpenVariable.F1 == 1 && (Greenfoot.mouseClicked(this))) {
                 Spikes spikes = new Spikes();
                 getWorld().addObject(spikes, 200, 200);
