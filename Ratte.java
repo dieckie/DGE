@@ -1,3 +1,5 @@
+ 
+
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -10,19 +12,10 @@ public class Ratte extends Enemy {
 
     /*
      * Definiert wie lange das Bild bei einem Treffer geaendert bleibt
-     */
+     */ 
     final int WOUND_SPRITE_DURATION = 200;
     
-    Eichhoernchen eichhoernchen;
-    Welt1 world;
-    /*
-     * gibt an wie oft die Schlange getroffen wurde
-     */
-    int schaden = 0;
-    /*
-     * gibt die Zeit wie lange der letze Treffer her ist
-     */
-    long lastHurt = 0;
+
     /*
      * ueberprueft ob das Bild bei einem Treffer aktiv ist oder nicht
      */
@@ -35,11 +28,14 @@ public class Ratte extends Enemy {
      * welches Schadensbild soll ausgewaehlt werden?
      */
     private boolean SB = false;
-    private int x, y, w = 0;
     
     
     public Ratte(){
+        setImage("images/enemy/mouse_r.png");
         DAMAGE = 1;
+        SPEED = 1;
+        HEALTH = 5;
+        SPRITE_NAME = "mouse";
     }
     
     /**
@@ -47,14 +43,16 @@ public class Ratte extends Enemy {
      */
     public void act() {
         super.act();
-        if(init) {
-            eichhoernchen = world.getEichhoernchen();
-        }
         if(world.isRunning()) {
             laufen();
-            schaden();
             animate();
         }
+    }
+    
+    
+    @Override
+    public void init(){
+        
     }
 
     /**
@@ -68,7 +66,7 @@ public class Ratte extends Enemy {
             setRotation(270);
             if(getY() <= 480) {
                 setRotation(180);
-                setImage("mouse3.png");
+                setImage("images/enemy/mouse_l.png");
                 SB = true;
             } else {
                 move(1);
@@ -78,7 +76,7 @@ public class Ratte extends Enemy {
             setRotation(270);
             if(getY() <= 290) {
                 setRotation(0);
-                setImage("mouse.png");
+                setImage("images/enemy/mouse_r.png");
                 SB = false;
             } else {
                 move(1);
@@ -88,7 +86,7 @@ public class Ratte extends Enemy {
             setRotation(270);
             if(getY() <= 100) {
                 setRotation(180);
-                setImage("mouse3.png");
+                setImage("images/enemy/mouse_l.png");
                 SB = true;
             } else {
                 move(1);
@@ -103,12 +101,12 @@ public class Ratte extends Enemy {
         if(SB) {
             if(hurtSprite) {
                 if(System.currentTimeMillis() - lastHurt > WOUND_SPRITE_DURATION) {
-                    setImage("images/mouse3.png");
+                    setImage("images/enemy/mouse_l.png");
                     hurtSprite = false;
                 }
             } else {
                 if(System.currentTimeMillis() - lastHurt < WOUND_SPRITE_DURATION) {
-                    setImage("images/mouse2_2.png");
+                    setImage("images/enemy/mouse_l_h.png");
                     hurtSprite = true;
                 }
             }
@@ -116,39 +114,19 @@ public class Ratte extends Enemy {
         if(!SB) {
             if(hurtSprite) {
                 if(System.currentTimeMillis() - lastHurt > WOUND_SPRITE_DURATION) {
-                    setImage("images/mouse.png");
+                    setImage("images/enemy/mouse_r.png");
                     hurtSprite = false;
                 }
             } else {
                 if(System.currentTimeMillis() - lastHurt < WOUND_SPRITE_DURATION) {
-                    setImage("images/mouse2.png");
+                    setImage("images/enemy/mouse_r_h.png");
                     hurtSprite = true;
                 }
             }
         }
     }
 
-    /**
-     * erzeugt Schaden am Eichhoernchen.
-     */
-    public void schaden() {
-        if(getX() < eichhoernchen.getX() + 75 && getX() > eichhoernchen.getX() - 75  && getY() == 100) {
-            eichhoernchen.hurt(1);
-        }
-    }
-
-    /**
-     * fuegt der Ratte schaden zu; entscheidet ueber die toene bei den Bedingungen.
-     */
-    public void verletzten() {
-        schaden++;
-        lastHurt = System.currentTimeMillis();
-        Kick.setVolume(15);
-        Kick.play();
-        if(schaden >= 5) {
-            died(getCoinEarnings());
-        }
-    }
+ 
 
     @Override
     public Ratte newInstance() {

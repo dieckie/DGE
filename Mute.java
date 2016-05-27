@@ -1,3 +1,5 @@
+ 
+
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -6,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Mute extends FertigVorlaeufig {
+public class Mute extends FertigVorlaeufig { 
 
     boolean init = true;
     Musik musik;
@@ -27,6 +29,7 @@ public class Mute extends FertigVorlaeufig {
         }
         mute();
     }
+
 
     private void mute() {
         if(Greenfoot.mouseClicked(this)) {

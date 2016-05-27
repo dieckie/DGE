@@ -1,14 +1,4 @@
 ------------------------------------------------------------------------
-Dies ist die README-Datei des Projekts. Hier sollten Sie Ihr Projekt
-beschreiben.
-Erzählen Sie dem Leser (jemand, der nichts über dieses Projekt weiss),
-alles, was er/sie wissen muss. Üblicherweise sollte der Kommentar 
-zumindest die folgenden Angaben umfassen:
+©2016 Kolja Nagel, Justus Dieckmann, Leonhard Ewering
 ------------------------------------------------------------------------
-
-PROJEKTBEZEICHNUNG:
-PROJEKTZWECK:
-VERSION oder DATUM:
-WIE IST DAS PROJEKT ZU STARTEN:
-AUTOR(EN):
-BENUTZERHINWEISE:
+To get the game go to https://www.dropbox.com/s/nsq6eyzqevm65n8/Die%20goldene%20Eichel.rar?dl=0 and download it.

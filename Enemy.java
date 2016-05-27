@@ -1,3 +1,5 @@
+ 
+
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -7,39 +9,83 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Enemy extends Actor {
-
-    //TODO Weiter machen!!
+     
     
-    GreenfootSound fatality = new GreenfootSound("Fatality.mp3");
     Welt1 world;
-    boolean init = true;
+    Eichhoernchen eichhoernchen;
+    GreenfootSound fatality = new GreenfootSound("Fatality.mp3");
+    GreenfootSound kick = new GreenfootSound("kick.mp3");
     
     int COIN_EARNINGS = 1;
     int HEIGHT = 0, WIDTH = 0;
     int DAMAGE = 0;
+    int HEALTH = 5;
+    int SPEED = 1;
+    String SPRITE_NAME = "";
+    
+    int schaden = 0;
+    long lastHurt = 0;
+    String direction = "r";
+
+    
+    boolean init = true;
     
     public void act(){
         if(init){
             init = false;
+            
             world = (Welt1) getWorld();
+            eichhoernchen = world.getEichhoernchen();
+            
             COIN_EARNINGS = getCoinEarnings();
             GreenfootImage img = getImage();
             HEIGHT = img.getHeight();
             WIDTH = img.getWidth();
+            
+            init();
         }
-    }
-   
-    public Enemy newInstance() {
-        return new Ratte();
+        collisionDetection();
     }
 
-    public void died(int earnedCoins) {
+        
+    public void init(){ 
+    }
+    
+    public void collisionDetection(){
+        if(getX() < eichhoernchen.getX() + 35 + WIDTH / 2 && getX() > eichhoernchen.getX() - 35 - WIDTH / 2 && getY() > eichhoernchen.getY() - 20 && getY() < eichhoernchen.getY() + 20) {
+            schadeEichhoernchen();
+        }
+    }
+    
+    public void schadeEichhoernchen(){
+        eichhoernchen.hurt(DAMAGE);
+    }
+    
+       /**
+     * fuegt der Ratte schaden zu; entscheidet ueber die toene bei den Bedingungen.
+     */
+    public void verletzten() {
+        schaden++;
+        lastHurt = System.currentTimeMillis();
+        kick.setVolume(15);
+        kick.play();
+        if(schaden >= HEALTH) {
+            died();
+        }
+    }
+    
+    public void died() {
         world.wellen.enemyDied();
         getWorld().removeObject(this);
         world.coins.earnCoins(COIN_EARNINGS);
         fatality.setVolume(Settings.volume);
         fatality.play();
     }
+      
+    public Enemy newInstance() {
+        return new Ratte();
+    }
+    
     public int getCoinEarnings(){
         int coins=0;
         switch(world.getWellen().getDifficulty()){
