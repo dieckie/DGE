@@ -1,7 +1,5 @@
 *.class
-_download.sh
-_upload.sh
-_stash.sh
+*.sh
+*.bat
 error.txt
 config.txt
-_start.sh
