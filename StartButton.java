@@ -16,5 +16,6 @@ public class StartButton extends Actor {
             Greenfoot.setWorld(new Welt1());
         }
         
+        
     }
 }
