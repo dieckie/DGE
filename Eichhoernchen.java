@@ -9,17 +9,21 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Eichhoernchen extends Actor {
 
     public int SHOT_INTERVAL = 300;
+    public int HURT_COOLDOWN = 200;
     long time = 0;
     int health = 10;
     Welt1 w;
+    int latestHit = HURT_COOLDOWN;
     /** true is left, false is right */
     boolean direction = false;
+
 
     public void act() {
         if(((Welt1) getWorld()).isRunning()) {
             bewegen();
             schiessen();
             gameover();
+            latestHit++;
         }
     }
 
@@ -84,7 +88,11 @@ public class Eichhoernchen extends Actor {
     }
 
     public void hurt(int damage) {
-        health -= damage;
+        if(latestHit > HURT_COOLDOWN){
+            health -= damage;
+            latestHit = 0;
+        }
+
     }
 
     public void heal(int healthGained) {

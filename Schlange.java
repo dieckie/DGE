@@ -130,7 +130,7 @@ public class Schlange extends Enemy {
      * erzeugt Schaden am Eichhoernchen.
      */
     public void schaden() {
-        if(getX() == eichhoernchen.getX() && getY() == 98) {
+        if(getX() < eichhoernchen.getX() + 75 && getX() > eichhoernchen.getX() - 75 && getY() == 98) {
             eichhoernchen.hurt(1);
         }
     }

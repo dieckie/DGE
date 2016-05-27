@@ -129,7 +129,7 @@ public class Ratte extends Enemy {
      * erzeugt Schaden am Eichhoernchen.
      */
     public void schaden() {
-        if(getX() == eichhoernchen.getX() && getY() == 100) {
+        if(getX() < eichhoernchen.getX() + 75 && getX() > eichhoernchen.getX() - 75  && getY() == 100) {
             eichhoernchen.hurt(1);
         }
     }
