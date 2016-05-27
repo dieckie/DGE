@@ -11,7 +11,7 @@ public class Config {
 
     public static void config(Welt1 w) {
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(Config.class.getResourceAsStream("config.txt")));
+            BufferedReader br = new BufferedReader(new FileReader("config.txt"));
             String line = br.readLine();
             if(line != null) {
                 // String text = s.nextLine();
