@@ -16,18 +16,26 @@ public class Musik extends Actor {
      * einmaliges Starten der Hintergrundmusik
      */
     boolean playingbg = false;
+    
+    boolean init = true;
+    
+    Welt1 world;
 
     /**
      * Act - do whatever the Musik wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        if(init) {
+            world = (Welt1) getWorld();
+            init = false;
+        }
         volumeMusic(Settings.volume);
         // Add your action code here.
         if(!playingbg) {
             startMusic();
             playingbg = true;
         }
-        if(OpenVariable.gameover) {
+        if(world.isGameOver()) {
             stopMusic();
         }
     }

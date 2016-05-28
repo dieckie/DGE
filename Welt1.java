@@ -16,6 +16,7 @@ public class Welt1 extends World {
     Wellen wellen;
     Coins coins;
     int menustate = 0;
+    int gamestate = 0;
 
     /**
      * Constructor for objects of class Welt_1.
@@ -62,7 +63,6 @@ public class Welt1 extends World {
         addObject(wellen, 495, 25);
         Config.config(this);
         wellen.initWaves();
-        OpenVariable.reset();
         coins.draw(); 
     }
 
@@ -99,5 +99,13 @@ public class Welt1 extends World {
             getEichhoernchen().setShotInterval(80);
             break;
         }
+    }
+    
+    public boolean isGameOver(){
+        return gamestate == 2;
+    }
+    
+    public boolean hasWon(){
+        return gamestate == 1;
     }
 }

@@ -9,7 +9,7 @@ import greenfoot.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Projektil extends OpenVariable {
+public class Projektil extends Actor {
 
     Actor ratte;
     Actor schlange;

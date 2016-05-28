@@ -13,14 +13,18 @@ public class Eichhoernchen extends Actor {
     public int SHOT_INTERVAL = 1;
     public int HURT_COOLDOWN = 200;
     int health = 10; 
-    Welt1 w;
+    Welt1 world;
     int latestHit = HURT_COOLDOWN;
     /** true is left, false is right */
     boolean direction = false;
-
+    boolean init = true;
 
     public void act() {
-        if(((Welt1) getWorld()).isRunning()) {
+        if(init) {
+            init = false;
+            world = (Welt1) getWorld();
+        }
+        if(world.isRunning()) {
             bewegen();
             schiessen();
             gameover();
@@ -33,9 +37,9 @@ public class Eichhoernchen extends Actor {
      */
     public void gameover() {
         if(health <= 0) {
-            OpenVariable.gameover = true;
+            world.gamestate = 2;
         }
-        if(OpenVariable.gameover) {
+        if(world.isGameOver()) {
             Greenfoot.setWorld(new Gameover());
             Config.saveWaves = 1;
             Config.saveCoins = 0;
