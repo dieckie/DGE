@@ -95,11 +95,13 @@ public class Eichhoernchen extends Actor {
             health -= damage;
             latestHit = 0;
         }
-
     }
 
     public void heal(int healthGained) {
         health += healthGained;
+        if(health > 10) {
+            health = 10;
+        }
     }
 
     public int getHealth() {

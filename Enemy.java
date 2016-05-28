@@ -6,8 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Enemy extends Actor {
-
+public abstract class Enemy extends Actor {
     Welt1 world;
     Eichhoernchen eichhoernchen;
     GreenfootSound fatality = new GreenfootSound("Fatality.mp3");
@@ -125,9 +124,7 @@ public class Enemy extends Actor {
         fatality.play();
     }
 
-    public Enemy newInstance() {
-        return new Ratte();
-    }
+    public abstract Enemy newInstance();
 
     public int getCoinEarnings(){
         int coins=0;

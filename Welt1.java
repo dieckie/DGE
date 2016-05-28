@@ -8,9 +8,8 @@ import java.io.*;
  * 
  * @author (your name)
  * @version (a version number or a date)
- */
+ */ 
 public class Welt1 extends World {
-
     int x = 0;
     Musik musik;
     Eichhoernchen eichhoernchen;
@@ -91,10 +90,10 @@ public class Welt1 extends World {
     public void initDifficulty() {
         switch(getWellen().getDifficulty()) {
         case 1:
-            getEichhoernchen().setShotInterval(40);
+            getEichhoernchen().setShotInterval(50);
             break;
         case 2:
-            getEichhoernchen().setShotInterval(60);
+            getEichhoernchen().setShotInterval(70);
             break;
         case 3:
             getEichhoernchen().setShotInterval(80);
