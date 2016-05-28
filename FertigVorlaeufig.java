@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class FertigVorlaeufig extends Shop {
+public class FertigVorlaeufig extends Actor {
 
     boolean isEscPressed = false;
     boolean init = true;

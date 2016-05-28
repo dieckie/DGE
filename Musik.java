@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Musik extends OpenVariable {
+public class Musik extends Actor {
 
     GreenfootSound bgMusic = new GreenfootSound("Double Dragon II_ The Revenge (Arcade) - (Soundtrack - 15 - Mission 1 Boss).mp3");
     boolean mute = false;
@@ -16,18 +16,26 @@ public class Musik extends OpenVariable {
      * einmaliges Starten der Hintergrundmusik
      */
     boolean playingbg = false;
+    
+    boolean init = true;
+    
+    Welt1 world;
 
     /**
      * Act - do whatever the Musik wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        if(init) {
+            world = (Welt1) getWorld();
+            init = false;
+        }
         volumeMusic(Settings.volume);
         // Add your action code here.
         if(!playingbg) {
             startMusic();
             playingbg = true;
         }
-        if(gameover) {
+        if(world.isGameOver()) {
             stopMusic();
         }
     }

@@ -3,49 +3,78 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
- * Write a description of class spikes here.
+ * Write a description of class Spikes_platziert here.
  * 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Spikes extends Shop {
+public class Spikes extends Item {
 
-    int button, mouseY, mouseX = 0;
-
-    /**
-     * Act - do whatever the spikes wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+    long timeSP = 0;
+    /*
+     * bestimmt den Zeitabstand, in welchem der Gegener 1 mal Schaden bekommt.
      */
-    public void act() {
-        follow();
+    final int HURT_INTERVAL = 300;
+    /*
+     * wie oft hat Spike schon getroffen?
+     */
+    private int hit = 0;
+    boolean init = true;
+    Welt1 world;
+    
+    public Spikes() {
+        title = "Spikes";
+        description = "Wird nach 15 Treffern wieder entfernt";
+        iconName = "spikes.png";
+        price = 10;
+        setImage("images/ui/shop/" + iconName);
     }
 
     /**
-     * sorgt dafuer, dass das objekt nach dem Kauf der Mausposition folgt und sich an der Stelle von spikes, Spikes_platziert setzt.
+     * Die Bedingung sorgt dafuer, dass die Spikes nur schaden machen, wenn man das Spiel fortsetzen will.
      */
-    public void follow() {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(!Greenfoot.mouseClicked(this)) {
-            if(mouse != null) {
-                mouseX = mouse.getX();
-                mouseY = mouse.getY();
-                if(mouseY > 550) {
-                    mouseY = 670;
-                } else if(mouseY > 360) {
-                    mouseY = 480;
-                } else if(mouseY > 170) {
-                    mouseY = 290;
+    public void act() {
+        if(init) {
+            init = false;
+            world = (Welt1) getWorld();
+        }
+        if(world.isRunning()) {
+            spikesSchaden();
+            entfernen();
+        }
+    }
+
+    /**
+     * erzeugt Schaden fuer die Gegner bei Beruehrung.
+     */
+    private void spikesSchaden() {
+        if(System.currentTimeMillis() - timeSP > HURT_INTERVAL) {
+            if(getOneIntersectingObject(Ratte.class) != null || (getOneIntersectingObject(Schlange.class) != null)) {
+                if(getOneIntersectingObject(Ratte.class) != null) {
+                    ((Ratte) getOneIntersectingObject(Ratte.class)).verletzten();
+                    timeSP = System.currentTimeMillis();
+                    hit++;
                 } else {
-                    mouseY = 100;
+                    if(getOneIntersectingObject(Schlange.class) != null) {
+                        ((Schlange) getOneIntersectingObject(Schlange.class)).verletzten();
+                        timeSP = System.currentTimeMillis();
+                        hit++;
+                    }
                 }
-                if(mouseX > 875) {
-                    mouseX = 875;
-                }
-                setLocation(mouseX, mouseY);
             }
-        } else if(mouse.getX() < 900) {
-            SpikesPlatziert spikesP = new SpikesPlatziert();
-            getWorld().addObject(spikesP, getX(), getY());
+        }
+    }
+
+    /**
+     * entfernt die Spikes nach 12 hits.
+     */
+    private void entfernen() {
+        if(hit >= 12) {
             getWorld().removeObject(this);
         }
+    }
+    
+    public Spikes newInstance() {
+        return new Spikes();
     }
 }

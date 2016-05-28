@@ -1,10 +1,17 @@
 #BlueJ class context
 comment0.target=Spikes
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ spikes\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Spikes_platziert\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ spikes\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.target=Spikes()
 comment2.params=
-comment2.target=void\ follow()
-comment2.text=\r\n\ sorgt\ dafuer,\ dass\ das\ objekt\ nach\ dem\ Kauf\ der\ Mausposition\ folgt\ und\ sich\ an\ der\ Stelle\ von\ spikes,\ Spikes_platziert\ setzt.\r\n
-numComments=3
+comment2.target=void\ act()
+comment2.text=\r\n\ Die\ Bedingung\ sorgt\ dafuer,\ dass\ die\ Spikes\ nur\ schaden\ machen,\ wenn\ man\ das\ Spiel\ fortsetzen\ will.\r\n
+comment3.params=
+comment3.target=void\ spikesSchaden()
+comment3.text=\r\n\ erzeugt\ Schaden\ fuer\ die\ Gegner\ bei\ Beruehrung.\r\n
+comment4.params=
+comment4.target=void\ entfernen()
+comment4.text=\r\n\ entfernt\ die\ Spikes\ nach\ 12\ hits.\r\n
+comment5.params=
+comment5.target=Spikes\ newInstance()
+numComments=6

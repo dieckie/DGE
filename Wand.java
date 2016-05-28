@@ -3,37 +3,63 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
- * Write a description of class Wand here.
+ * Write a description of class Wand_platziert here.
  * 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Wand extends Shop {
+public class Wand extends Item {
 
-    int button, mouseY, mouseX = 0;
+    private int time = 0;
+    Actor ratte;
+    Actor schlange;
+    Welt1 world;
+    boolean init = true;
+    
+    public Wand() {
+        title = "Zaun";
+        description = "Haelt kurzzeitig die Gegner auf";
+        iconName = "wand.png";
+        price = 8;
+        setImage("images/ui/shop/" + iconName);
+    }
+    
 
     /**
-     * Act - do whatever the spikes wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Wand_platziert wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        follow();
+        if(init) {
+            world = (Welt1) getWorld();
+        }
+        anhalten();
     }
 
     /**
-     * sorgt dafuer, dass das objekt nach dem Kauf der Mausposition folgt und sich an der Stelle von Wand, Wand_platziert setzt.
+     * haelt die Gegner bei Beruehrung mit der Wand an; entfernt die Wand nach einer Zeit.
      */
-    public void follow() {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(!Greenfoot.mouseClicked(this)) {
-            if(mouse != null) {
-                mouseX = mouse.getX();
-                mouseY = mouse.getY();
-                setLocation(mouseX, mouseY);
+    private void anhalten() {
+        ratte = getOneIntersectingObject(Ratte.class);
+        schlange = getOneIntersectingObject(Schlange.class);
+        if(world.isRunning()) {
+            time++;
+            if(time <= 1500) {
+                if(ratte != null || (schlange != null)) {
+                    if(ratte != null) {
+                        //((Ratte) getOneIntersectingObject(Ratte.class)).warten();
+                    } else {
+                        if(schlange != null) {
+                            //((Schlange) getOneIntersectingObject(Schlange.class)).warten();
+                        }
+                    }
+                }
+            } else {
+                getWorld().removeObject(this);
             }
-        } else {
-            WandPlatziert wandP = new WandPlatziert();
-            getWorld().addObject(wandP, getX(), getY());
-            getWorld().removeObject(this);
         }
+    }
+    
+    public Wand newInstance() {
+        return new Wand();
     }
 }
