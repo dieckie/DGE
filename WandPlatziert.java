@@ -50,18 +50,3 @@ public class WandPlatziert extends Wand {
         }
     }
 }
-// if (getOneIntersectingObject(Ratte.class)!= null || (getOneIntersectingObject(Schlange.class)!= null)){
-// if (getOneIntersectingObject(Ratte.class)!= null)
-// {
-// wand=true;
-// }else{
-// if (getOneIntersectingObject(Schlange.class)!= null)
-// {
-// wand=true;
-// }
-// }
-// }
-// }else{
-// wand=false;
-// getWorld().removeObject(this);
-// }
