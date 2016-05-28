@@ -19,15 +19,6 @@ public class OpenVariable extends Actor {
      * spiel gewonnen
      */
     static boolean Win = false;
-    /*
-     * Felder Shop Variablen fuer Bilder
-     */
-    static int F1 = 1;
-    static int F2 = 2;
-    static int F3 = 3;
-    static int F4 = 4;
-    static int F5 = 5;
-    static int F6 = 6;
 
     /**
      * alle Variablen werden bei einem Neustart auf den Startwert zurueckgesetzt.
@@ -35,11 +26,5 @@ public class OpenVariable extends Actor {
     public static void reset() {
         gameover = false;
         Win = false;
-        F1 = 1;
-        F2 = 2;
-        F3 = 3;
-        F4 = 4;
-        F5 = 5;
-        F6 = 6;
     }
 }

@@ -10,5 +10,5 @@ comment2.text=\r\n\ veraendert\ die\ Anzeige\ bei\ erhalten\ eines\ Coins(C).\r\
 comment3.params=coins
 comment3.target=void\ earnCoins(int)
 comment4.params=coins
-comment4.target=void\ lostCoins(int)
+comment4.target=void\ looseCoins(int)
 numComments=5
