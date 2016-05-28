@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Musik extends OpenVariable {
+public class Musik extends Actor {
 
     GreenfootSound bgMusic = new GreenfootSound("Double Dragon II_ The Revenge (Arcade) - (Soundtrack - 15 - Mission 1 Boss).mp3");
     boolean mute = false;
@@ -27,7 +27,7 @@ public class Musik extends OpenVariable {
             startMusic();
             playingbg = true;
         }
-        if(gameover) {
+        if(OpenVariable.gameover) {
             stopMusic();
         }
     }

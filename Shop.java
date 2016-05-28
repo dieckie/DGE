@@ -1,6 +1,7 @@
  
 
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
+import java.io.*;
 
 /**
  * Write a description of class Shop here.
@@ -13,6 +14,10 @@ public class Shop extends Actor {
     private boolean UI = false;
     final static int MAX_ITEMS = 8;
 
+    public Shop() {
+        setImage("images/ui/shop/shop.png");
+    }
+    
     /**
      * Act - do whatever the Shop wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
