@@ -10,10 +10,9 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Eichhoernchen extends Actor {
 
-    public int SHOT_INTERVAL = 300;
+    public int SHOT_INTERVAL = 1;
     public int HURT_COOLDOWN = 200;
-    long time = 0;
-    int health = 10;
+    int health = 10; 
     Welt1 w;
     int latestHit = HURT_COOLDOWN;
     /** true is left, false is right */
@@ -45,11 +44,14 @@ public class Eichhoernchen extends Actor {
         }
     }
 
+    int shotActs = 0;
+    
     /**
      * setzt das Projektil in die Welt.
      */
     private void schiessen() {
-        if(System.currentTimeMillis() - time > SHOT_INTERVAL) {
+        shotActs++;
+        if(shotActs > SHOT_INTERVAL) {
             if(Greenfoot.isKeyDown("space")) {
                 Projektil projektil = new Projektil();
                 if(direction) {
@@ -58,11 +60,10 @@ public class Eichhoernchen extends Actor {
                     getWorld().addObject(projektil, getX() + 22, getY() + 17);
                 }
                 projektil.setRotation(90);
-                time = System.currentTimeMillis();
+                shotActs = 0;
             }
         }
     }
-
     /**
      * Es wird definiert wann sich das Eichhoernchen wie bewegen soll.
      */
@@ -116,14 +117,4 @@ public class Eichhoernchen extends Actor {
     public void setShotInterval(int interval) {
         SHOT_INTERVAL = interval;
     }
-    // public void initDifficulty(){
-    // switch(w.getWellen().getDifficulty()){
-    // case 1: SHOT_INTERVAL = 200;
-    // break;
-    // case 2: SHOT_INTERVAL = 300;
-    // break;
-    // case 3: SHOT_INTERVAL = 400;
-    // break;
-    // }
-    // }
 }

@@ -64,7 +64,7 @@ public class Welt1 extends World {
         Config.config(this);
         wellen.initWaves();
         OpenVariable.reset();
-        coins.draw();
+        coins.draw(); 
     }
 
     public Eichhoernchen getEichhoernchen() {
@@ -91,13 +91,13 @@ public class Welt1 extends World {
     public void initDifficulty() {
         switch(getWellen().getDifficulty()) {
         case 1:
-            getEichhoernchen().setShotInterval(200);
+            getEichhoernchen().setShotInterval(40);
             break;
         case 2:
-            getEichhoernchen().setShotInterval(300);
+            getEichhoernchen().setShotInterval(60);
             break;
         case 3:
-            getEichhoernchen().setShotInterval(400);
+            getEichhoernchen().setShotInterval(80);
             break;
         }
     }
