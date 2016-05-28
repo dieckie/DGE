@@ -29,7 +29,7 @@ public abstract class Enemy extends Actor {
             init = false;
             world = (Welt1) getWorld();
             eichhoernchen = world.getEichhoernchen();
-            COIN_EARNINGS = getCoinEarnings();
+            COIN_EARNINGS = getCoinEarnings(Config.difficulty);
             GreenfootImage img = getImage();
             HEIGHT = img.getHeight();
             WIDTH = img.getWidth();
@@ -121,19 +121,5 @@ public abstract class Enemy extends Actor {
 
     public abstract Enemy newInstance();
 
-    public int getCoinEarnings() {
-        int coins = 0;
-        switch(world.getWellen().getDifficulty()) {
-        case 1:
-            coins = 1;
-            break;
-        case 2:
-            coins = 1;
-            break;
-        case 3:
-            coins = 2;
-            break;
-        }
-        return coins;
-    }
+    public abstract int getCoinEarnings(int difficulty);
 }

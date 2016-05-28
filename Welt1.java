@@ -34,6 +34,7 @@ public class Welt1 extends World {
      * Bereite die Welt fuer den Programmstart vor. Das heisst: Erzeuge die Anfangs- Objekte und fuege sie der Welt hinzu.
      */
     private void prepare() {
+        Config.config(this);
         musik = new Musik();
         addObject(musik, 0, 0);
         P1 p1 = new P1();
@@ -60,7 +61,7 @@ public class Welt1 extends World {
         addObject(debug, 190, 75);
         wellen = new Wellen();
         addObject(wellen, 495, 25);
-        Config.config(this);
+
         wellen.initWaves();
         coins.draw();
     }
@@ -86,7 +87,7 @@ public class Welt1 extends World {
     }
 
     public void initDifficulty() {
-        switch(getWellen().getDifficulty()) {
+        switch(Config.difficulty) {
         case 1:
             getEichhoernchen().setShotInterval(50);
             break;

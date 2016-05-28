@@ -18,14 +18,14 @@ public class Config {
                 String[] parts = line.split(" ");
                 username = parts[0];
                 password = parts[1];
-                w.wellen.welle = Integer.parseInt(parts[2]);
-                w.coins.coins = Integer.parseInt(parts[3]);
-                w.getEichhoernchen().setHealth(Integer.parseInt(parts[4]));
-                w.getWellen().setDifficulty(Integer.parseInt(parts[5]));
+                //w.wellen.welle = Integer.parseInt(parts[2]);
+                //w.coins.coins = Integer.parseInt(parts[3]);
+                //w.getEichhoernchen().setHealth(Integer.parseInt(parts[4]));
+                //w.getWellen().setDifficulty(Integer.parseInt(parts[5]));
+                saveWaves = Integer.parseInt(parts[2]);
+                saveCoins = Integer.parseInt(parts[3]);
+                saveHealth = Integer.parseInt(parts[4]);
                 difficulty = Integer.parseInt(parts[5]);
-                saveWaves = w.wellen.welle;
-                saveCoins = w.coins.coins;
-                saveHealth = w.getEichhoernchen().getHealth();
             }
             br.close();
         } catch(IOException e) {

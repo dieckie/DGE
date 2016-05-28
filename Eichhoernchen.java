@@ -16,6 +16,10 @@ public class Eichhoernchen extends Actor {
     /** true is left, false is right */
     boolean direction = false;
     boolean init = true;
+    
+    public Eichhoernchen() {
+        health = Config.saveHealth;
+    }
 
     public void act() {
         if(init) {

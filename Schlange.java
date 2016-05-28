@@ -22,19 +22,15 @@ public class Schlange extends Enemy {
     }
 
     @Override
-    public int getCoinEarnings() {
-        int coinEarnings = 0;
-        switch(world.getWellen().getDifficulty()) {
-        case 1:
-            coinEarnings = 2;
-            break;
-        case 2:
-            coinEarnings = 2;
-            break;
-        case 3:
-            coinEarnings = 3;
-            break;
+    public int getCoinEarnings(int difficulty) {
+        switch(difficulty) {
+            case 1:
+            return 2;
+            case 2:
+            return 2;
+            case 3:
+            return 4;
         }
-        return coinEarnings;
+        return 0;
     }
 }

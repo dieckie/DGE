@@ -10,20 +10,29 @@ import java.util.Scanner;
  * @version (a version number or a date)
  */
 public class Wellen extends Actor {
-
+    
+    
+    Welt1 world;
+    String[] wellen;
+    boolean init = true;
+    int welle = 0;
+    private int h = 0;
+    int livingEnemys = 0;
+    
     public Wellen() {
+        welle = Config.saveWaves;
     }
 
     public void initWaves() {
         try {
             int lines = 0;
             String line;
-            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen" + getDifficulty() + ".txt")));
+            BufferedReader br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen" + Config.difficulty + ".txt")));
             while(br.readLine() != null) {
                 lines++;
             }
             wellen = new String[lines + 1];
-            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen" + getDifficulty() + ".txt")));
+            br = br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("wellen/wellen" + Config.difficulty + ".txt")));
             for(int i = 1; ((line = br.readLine()) != null); i++) {
                 wellen[i] = line;
             }
@@ -33,18 +42,11 @@ public class Wellen extends Actor {
         }
     }
 
-    Welt1 w;
-    String[] wellen;
-    int welle = 0;
-    private int h = 0;
-    int livingEnemys = 0;
-    boolean init = true;
-    int _difficulty;
 
     public void act() {
         if(livingEnemys == 0) {
-            Welt1 world = (Welt1) getWorld();
             if(init) {
+                world = (Welt1) getWorld();
                 init = false;
             } else {
                 welle++;
@@ -100,13 +102,5 @@ public class Wellen extends Actor {
 
     public void enemyDied() {
         livingEnemys--;
-    }
-
-    public int getDifficulty() {
-        return _difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        _difficulty = difficulty;
     }
 }

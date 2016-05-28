@@ -23,19 +23,15 @@ public class Ratte extends Enemy {
     }
 
     @Override
-    public int getCoinEarnings() {
-        int coins = 1;
-        switch(world.getWellen().getDifficulty()) {
-        case 1:
-            coins = 1;
-            break;
-        case 2:
-            coins = 1;
-            break;
-        case 3:
-            coins = 2;
-            break;
+    public int getCoinEarnings(int difficulty) {
+        switch(difficulty) {
+            case 1:
+            return 1;
+            case 2:
+            return 1;
+            case 3:
+            return 3;
         }
-        return coins;
+        return 0;
     }
 }

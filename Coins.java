@@ -11,6 +11,10 @@ public class Coins extends Actor {
 
     int coins = 0;
 
+    public Coins() {
+        coins = Config.saveCoins;
+    }
+    
     /**
      * Act - do whatever the coins wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
