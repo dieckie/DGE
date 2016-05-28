@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.*;
 import java.awt.image.*;
@@ -21,6 +19,7 @@ public class Settings extends FertigVorlaeufig {
     static int volume = 10;
     static int clickVolume = 10;
     GreenfootSound kick = new GreenfootSound("kick.mp3");
+
     public Settings() {
         tonX = volume * 6;
         clickX = clickVolume * 6;

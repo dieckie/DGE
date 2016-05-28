@@ -1,5 +1,5 @@
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
  * Write a description of class Settings here.
  * 
@@ -13,8 +13,8 @@ public class SettingsButton extends Buttons {
      */
     Welt1 world;
     boolean init = true;
-    
-    public void act(){
+
+    public void act() {
         super.act();
         if(init) {
             init = false;
@@ -26,7 +26,7 @@ public class SettingsButton extends Buttons {
     }
 
     @Override
-    public void action(){
+    public void action() {
         Settings s = new Settings();
         getWorld().addObject(s, getWorld().getWidth() / 2, getWorld().getHeight() / 2);
     }

@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -15,7 +13,7 @@ public class Wand extends Item {
     Actor schlange;
     Welt1 world;
     boolean init = true;
-    
+
     public Wand() {
         title = "Zaun";
         description = "Haelt kurzzeitig die Gegner auf";
@@ -23,7 +21,6 @@ public class Wand extends Item {
         price = 8;
         setImage("images/ui/shop/" + iconName);
     }
-    
 
     /**
      * Act - do whatever the Wand_platziert wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -46,10 +43,10 @@ public class Wand extends Item {
             if(time <= 1500) {
                 if(ratte != null || (schlange != null)) {
                     if(ratte != null) {
-                        //((Ratte) getOneIntersectingObject(Ratte.class)).warten();
+                        // ((Ratte) getOneIntersectingObject(Ratte.class)).warten();
                     } else {
                         if(schlange != null) {
-                            //((Schlange) getOneIntersectingObject(Schlange.class)).warten();
+                            // ((Schlange) getOneIntersectingObject(Schlange.class)).warten();
                         }
                     }
                 }
@@ -58,7 +55,7 @@ public class Wand extends Item {
             }
         }
     }
-    
+
     public Wand newInstance() {
         return new Wand();
     }

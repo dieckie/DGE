@@ -1,13 +1,13 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Placer here.
  * 
- * @author (your name) 
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class Placer extends Actor
-{
+public class Placer extends Actor {
+
     Item item;
 
     public Placer(Item item) {
@@ -38,5 +38,5 @@ public class Placer extends Actor
             getWorld().addObject(item.newInstance(), getX(), getY());
             getWorld().removeObject(this);
         }
-    }    
+    }
 }

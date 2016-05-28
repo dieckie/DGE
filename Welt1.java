@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)#      
 import java.io.*;
 
@@ -8,8 +6,9 @@ import java.io.*;
  * 
  * @author (your name)
  * @version (a version number or a date)
- */ 
+ */
 public class Welt1 extends World {
+
     int x = 0;
     Musik musik;
     Eichhoernchen eichhoernchen;
@@ -47,7 +46,7 @@ public class Welt1 extends World {
         addObject(p4, 450, 240);
         eichhoernchen = new Eichhoernchen();
         addObject(eichhoernchen, 450, 92);
-        Shop shop = new Shop(); 
+        Shop shop = new Shop();
         addObject(shop, 1090, 360);
         Greenfoot.setSpeed(60);
         Herzen herzen = new Herzen();
@@ -63,7 +62,7 @@ public class Welt1 extends World {
         addObject(wellen, 495, 25);
         Config.config(this);
         wellen.initWaves();
-        coins.draw(); 
+        coins.draw();
     }
 
     public Eichhoernchen getEichhoernchen() {
@@ -86,7 +85,6 @@ public class Welt1 extends World {
         menustate = 0;
     }
 
-
     public void initDifficulty() {
         switch(getWellen().getDifficulty()) {
         case 1:
@@ -100,12 +98,12 @@ public class Welt1 extends World {
             break;
         }
     }
-    
-    public boolean isGameOver(){
+
+    public boolean isGameOver() {
         return gamestate == 2;
     }
-    
-    public boolean hasWon(){
+
+    public boolean hasWon() {
         return gamestate == 1;
     }
 }

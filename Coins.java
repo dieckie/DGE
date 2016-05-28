@@ -1,4 +1,3 @@
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 import java.awt.*;
 
@@ -30,7 +29,6 @@ public class Coins extends Actor {
         GreenfootImage img = Util.drawCoins(coins);
         img.drawString(coins + "", -3, 37);
         setImage(img);
-
     }
 
     public void earnCoins(int coins) {

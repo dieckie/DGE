@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*;
 import java.util.Scanner;
 import java.io.*;
@@ -7,7 +5,7 @@ import java.net.*;
 import java.util.concurrent.*;
 
 public class Config {
-    
+
     static String username, password;
     static int saveWaves, saveCoins, saveHealth, difficulty;
 
@@ -34,7 +32,7 @@ public class Config {
             e.printStackTrace();
         }
     }
-    
+
     public static void speichern() {
         ExecutorService exe = Executors.newFixedThreadPool(1);
         exe.execute(new Runnable() {
@@ -42,8 +40,8 @@ public class Config {
             @Override
             public void run() {
                 try {
-                    String body = "username=" + URLEncoder.encode(username, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8") + "&wave=" + URLEncoder.encode(saveWaves + "", "UTF-8") + "&coins="
-                            + URLEncoder.encode(saveCoins + "", "UTF-8") + "&health=" + URLEncoder.encode(saveHealth + "", "UTF-8");
+                    String body = "username=" + URLEncoder.encode(username, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8") + "&wave=" + URLEncoder.encode(saveWaves + "", "UTF-8") + "&coins=" + URLEncoder.encode(saveCoins + "", "UTF-8") + "&health="
+                            + URLEncoder.encode(saveHealth + "", "UTF-8");
                     // System.out.println(body);
                     URL url = new URL("http://dieckie.bplaced.net/kolja/update.php");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -62,11 +60,9 @@ public class Config {
                     }
                     writer.close();
                     reader.close();
-                    
                     BufferedWriter bw = new BufferedWriter(new FileWriter("config.txt"));
                     bw.write(username + " " + password + " " + saveWaves + " " + saveCoins + " " + saveHealth + " " + difficulty);
                     bw.close();
-                    
                 } catch(IOException e) {
                     e.printStackTrace();
                 }

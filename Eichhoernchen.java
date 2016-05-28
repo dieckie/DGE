@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -12,7 +10,7 @@ public class Eichhoernchen extends Actor {
 
     public int SHOT_INTERVAL = 1;
     public int HURT_COOLDOWN = 200;
-    int health = 10; 
+    int health = 10;
     Welt1 world;
     int latestHit = HURT_COOLDOWN;
     /** true is left, false is right */
@@ -49,7 +47,7 @@ public class Eichhoernchen extends Actor {
     }
 
     int shotActs = 0;
-    
+
     /**
      * setzt das Projektil in die Welt.
      */
@@ -68,6 +66,7 @@ public class Eichhoernchen extends Actor {
             }
         }
     }
+
     /**
      * Es wird definiert wann sich das Eichhoernchen wie bewegen soll.
      */
@@ -95,7 +94,7 @@ public class Eichhoernchen extends Actor {
     }
 
     public void hurt(int damage) {
-        if(latestHit > HURT_COOLDOWN){
+        if(latestHit > HURT_COOLDOWN) {
             health -= damage;
             latestHit = 0;
         }

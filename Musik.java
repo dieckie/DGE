@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -16,9 +14,7 @@ public class Musik extends Actor {
      * einmaliges Starten der Hintergrundmusik
      */
     boolean playingbg = false;
-    
     boolean init = true;
-    
     Welt1 world;
 
     /**

@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -9,8 +7,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Ratte extends Enemy {
-    
-    public Ratte(){
+
+    public Ratte() {
         setImage("images/enemy/mouse_r.png");
         DAMAGE = 1;
         SPEED = 1;
@@ -18,22 +16,23 @@ public class Ratte extends Enemy {
         SPRITE_NAME = "mouse";
         WOUND_SPRITE_DURATION = 200;
     }
-    
+
     @Override
     public Ratte newInstance() {
         return new Ratte();
     }
+
     @Override
-    public int getCoinEarnings(){
+    public int getCoinEarnings() {
         int coins = 1;
-        switch(world.getWellen().getDifficulty()){
-            case 1: 
+        switch(world.getWellen().getDifficulty()) {
+        case 1:
             coins = 1;
             break;
-            case 2:
+        case 2:
             coins = 1;
             break;
-            case 3:
+        case 3:
             coins = 2;
             break;
         }

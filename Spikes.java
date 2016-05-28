@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -21,10 +19,10 @@ public class Spikes extends Item {
     private int hit = 0;
     boolean init = true;
     Welt1 world;
-    
+
     public Spikes() {
         title = "Spikes";
-        description = "Wird nach 15 Treffern wieder entfernt";
+        description = "Wird nach 8 Treffern wieder entfernt";
         iconName = "spikes.png";
         price = 10;
         setImage("images/ui/shop/" + iconName);
@@ -69,11 +67,11 @@ public class Spikes extends Item {
      * entfernt die Spikes nach 12 hits.
      */
     private void entfernen() {
-        if(hit >= 12) {
+        if(hit >= 8) {
             getWorld().removeObject(this);
         }
     }
-    
+
     public Spikes newInstance() {
         return new Spikes();
     }

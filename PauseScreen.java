@@ -1,5 +1,3 @@
- 
-
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)      
 
 /**
@@ -14,14 +12,17 @@ public class PauseScreen extends Buttons {
     Welt1 world;
 
     public void act() {
+        super.act();
         if(init) {
             world = (Welt1) getWorld();
-        }
-        if(Greenfoot.mouseClicked(this)) {
-            world.pause();
         }
         if(world.isRunning() && this != null) {
             getWorld().removeObject(this);
         }
+    }
+
+    @Override
+    public void action() {
+        world.pause();
     }
 }
