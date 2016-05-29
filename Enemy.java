@@ -90,7 +90,7 @@ public abstract class Enemy extends Actor {
             if(hurtSprite) {
                 fileName += "_h";
             }
-            setImage(new GreenfootImage("images/enemy/" + fileName + ".png"));
+            setImage(new GreenfootImage("images/entity/" + fileName + ".png"));
         }
     }
 

@@ -9,7 +9,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Eichhoernchen extends Actor {
 
     public int SHOT_INTERVAL = 1;
-    public int HURT_COOLDOWN = 200;
+    public int HURT_COOLDOWN = 150;
 
     Welt1 world;
 
@@ -17,8 +17,8 @@ public class Eichhoernchen extends Actor {
     int goldeneEicheln = 0;
 
     int latestHit = HURT_COOLDOWN;
-    /** true is left, false is right */
-    boolean direction = false;
+    
+    String direction = "r";
 
     boolean init = true;
 
@@ -33,14 +33,54 @@ public class Eichhoernchen extends Actor {
         }
         if(world.isRunning()) {
             bewegen();
+            animate();
             schiessen();
             gameover();
             latestHit++;
         }
     }
+    
+    /**
+     * Es wird definiert wann sich das Eichhoernchen wie bewegen soll.
+     */
+    private void bewegen() {
+        if(getX() + 28 >= 880) {
+            setLocation(879 - 28, getY());
+        } else {
+            if(Greenfoot.isKeyDown("D")) {
+                move(1);
+                direction = "r";
+                if(Greenfoot.isKeyDown("shift")) {
+                    move(2);
+                }
+            }
+            if(Greenfoot.isKeyDown("A")) {
+                move(-1);
+                direction = "l";
+                if(Greenfoot.isKeyDown("shift")) {
+                    move(-2);
+                }
+            }
+        }
+    }
+    
+    
+    String oldDir = "";
+    boolean oldIsHit = true;
+    public void animate() {
+        if(!oldDir.equals(direction) || oldIsHit != (latestHit < HURT_COOLDOWN)) {
+            oldDir = direction;
+            oldIsHit = latestHit < HURT_COOLDOWN;
+            String name = "images/entity/eich_" + direction;
+            if(oldIsHit) {
+                name += "_h";
+            }
+            setImage(name + ".png");
+        }
+    }
 
     /**
-     * oeffnet den gameover Bildschirm nach dem "tod" (l=0) des Eichhoernchens.
+     * oeffnet den gameover Bildschirm nach dem "tod" (health=0) des Eichhoernchens.
      */
     public void gameover() {
         if(health <= 0) {
@@ -71,7 +111,7 @@ public class Eichhoernchen extends Actor {
                 } else {
                     projektil = new Projektil(false);
                 }
-                if(direction) {
+                if(direction.equals("l")) {
                     getWorld().addObject(projektil, getX() - 20, getY() + 17);
                 } else {
                     getWorld().addObject(projektil, getX() + 22, getY() + 17);
@@ -84,32 +124,6 @@ public class Eichhoernchen extends Actor {
 
     public void addGoldeneEicheln(int amount) {
         goldeneEicheln += amount;
-    }
-
-    /**
-     * Es wird definiert wann sich das Eichhoernchen wie bewegen soll.
-     */
-    private void bewegen() {
-        if(getX() + 28 >= 880) {
-            setLocation(879 - 28, getY());
-        } else {
-            if(Greenfoot.isKeyDown("D")) {
-                setImage("eich-rechts.png");
-                move(1);
-                direction = false;
-                if(Greenfoot.isKeyDown("shift")) {
-                    move(2);
-                }
-            }
-            if(Greenfoot.isKeyDown("A")) {
-                setImage("eichhoernchenlauf1.png");
-                move(-1);
-                direction = true;
-                if(Greenfoot.isKeyDown("shift")) {
-                    move(-2);
-                }
-            }
-        }
     }
 
     public void hurt(int damage) {

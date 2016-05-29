@@ -10,7 +10,9 @@ import greenfoot.*;
 public class Projektil extends Actor {
 
     int damage = 1;
-    
+    boolean init = true;
+    Welt1 world;
+
     public Projektil(boolean golden) {
         if(golden) {
             damage = 2;
@@ -20,13 +22,19 @@ public class Projektil extends Actor {
             setImage("images/eichel.png");
         }
     }
-    
+
     /**
      * Act - do whatever the Projektil wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        setLocation(getX(), getY() + 4);
-        collisionDetection();
+        if(init) {
+            init = false;
+            world = (Welt1) getWorld();
+        }
+        if(world.isRunning()) {
+            setLocation(getX(), getY() + 4);
+            collisionDetection();
+        }
     }
 
     /**

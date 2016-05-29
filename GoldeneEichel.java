@@ -12,7 +12,7 @@ public class GoldeneEichel extends Item
         title = "Goldene Eichel";
         iconName = "goldene Eichel.png";
         price = 10;
-        description = "10 goldene Eicheln. Richten bei Gegnern höheren Schaden an";
+        description = "10 goldene Eicheln. Richten bei Gegnern hoeheren Schaden an";
         placeable = false;
         setImage("images/ui/shop/" + iconName);
     }

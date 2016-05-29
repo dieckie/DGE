@@ -9,7 +9,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and snakeInfo)
 public class Schlange extends Enemy {
 
     public Schlange() {
-        setImage("images/enemy/snake_r.png");
+        setImage("images/entity/snake_r.png");
         DAMAGE = 1;
         SPEED = 2;
         HEALTH = 3;

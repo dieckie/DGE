@@ -16,6 +16,9 @@ public class Welt1 extends World {
     Coins coins;
     int menustate = 0;
     int gamestate = 0;
+    boolean pausing = false;
+    boolean resuming = false;
+    
 
     /**
      * Constructor for objects of class Welt_1.
@@ -66,6 +69,31 @@ public class Welt1 extends World {
         coins.draw();
     }
 
+    int speed = 60;
+    
+    public void act() {
+        if(pausing) {
+            if(speed > 40) {
+                speed -= 2;
+                Greenfoot.setSpeed(speed);
+            } else {
+                menustate = 1;
+                pausing = false;
+            }
+        }
+        if(resuming) {
+            if(speed < 60) {
+                speed += 1;
+                Greenfoot.setSpeed(speed);
+            } else {
+                speed = 60;
+                Greenfoot.setSpeed(speed);
+                menustate = 0;
+                resuming = false;
+            }
+        }
+    }
+
     public Eichhoernchen getEichhoernchen() {
         return eichhoernchen;
     }
@@ -78,23 +106,28 @@ public class Welt1 extends World {
         return menustate == 0;
     }
 
+
     public void pause() {
+        //pausing = true;
+        //resuming = false;
         menustate = 1;
     }
 
     public void resume() {
+        //pausing = false;
+        //resuming = true;
         menustate = 0;
     }
 
     public void initDifficulty() {
         switch(Config.difficulty) {
-        case 1:
+            case 1:
             getEichhoernchen().setShotInterval(50);
             break;
-        case 2:
+            case 2:
             getEichhoernchen().setShotInterval(70);
             break;
-        case 3:
+            case 3:
             getEichhoernchen().setShotInterval(80);
             break;
         }

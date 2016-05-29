@@ -9,7 +9,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ratte extends Enemy {
 
     public Ratte() {
-        setImage("images/enemy/mouse_r.png");
+        setImage("images/entity/mouse_r.png");
         DAMAGE = 1;
         SPEED = 1;
         HEALTH = 5;
