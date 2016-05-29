@@ -11,7 +11,7 @@ public abstract class Item extends Actor {
     String title = "Missing No.";
     String description = "NULL";
     String iconName = "";
-    int price = 0;
+    int[] price = {0,0,0};
     boolean placeable = true;
     int[] unlock = {0,0,0};
 

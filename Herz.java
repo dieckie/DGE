@@ -12,7 +12,9 @@ public class Herz extends Item {
         title = "Herz";
         description = "Fuellt ein halbes Herz wieder auf";
         iconName = "herz.png";
-        price = 10;
+        price[0] = 10;
+        price[1] = 10;
+        price[2] = 10;
         placeable = false;
         setImage("images/ui/shop/" + iconName);
         unlock[0] = 5;

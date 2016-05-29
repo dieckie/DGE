@@ -11,7 +11,9 @@ public class GoldeneEichel extends Item
     public GoldeneEichel() {
         title = "10 goldene Eicheln";
         iconName = "goldene Eichel.png";
-        price = 10;
+        price[0] = 10;
+        price[1] = 10;
+        price[2] = 10;
         description = "Richten bei Gegnern doppelten Schaden an";
         placeable = false;
         setImage("images/ui/shop/" + iconName);

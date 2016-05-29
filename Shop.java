@@ -117,12 +117,12 @@ public class Shop extends Actor {
     }
 
     public void kaufen(Item item) {
-        if(world.coins.coins >= item.price) {
+        if(world.coins.coins >= item.price[Config.difficulty - 1]) {
             if(item.isBuyable(world)) {
                 if(world.wellen.welle >= item.unlock[Config.difficulty - 1]) {
                     click.setVolume(75);
                     click.play();
-                    world.coins.looseCoins(item.price);
+                    world.coins.looseCoins(item.price[Config.difficulty - 1]);
                     if(item.isPlaceable()) {
                         world.addObject(new Placer(item), lastX, lastY);
                     } else {
@@ -157,7 +157,7 @@ public class Shop extends Actor {
                 g.setColor(new Color(20, 20, 20));
                 g = Util.drawMultilineText(item.description, 20, 605, 250, 25, false, g);
                 g.dispose();
-                img.drawImage(Util.drawCoins(item.price), 20, 660);
+                img.drawImage(Util.drawCoins(item.price[Config.difficulty - 1]), 20, 660);
             }
             setImage(img);
             oldIndex = index;

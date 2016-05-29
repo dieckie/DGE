@@ -24,7 +24,9 @@ public class Spikes extends Item {
         title = "Spikes";
         description = "Wird nach 8 Treffern wieder entfernt";
         iconName = "spikes.png";
-        price = 10;
+        price[0] = 10;
+        price[1] = 10;
+        price[2] = 20;
         setImage("images/ui/shop/" + iconName);
         unlock[0] = 0;
         unlock[1] = 5;

@@ -18,7 +18,9 @@ public class Wand extends Item {
         title = "Zaun";
         description = "Haelt kurzzeitig die Gegner auf";
         iconName = "wand.png";
-        price = 8;
+        price[0] = 8;
+        price[1] = 8;
+        price[2] = 8;
         unlock[0] = 30;
         unlock[1] = 30;
         unlock[2] = 30;
