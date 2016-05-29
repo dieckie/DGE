@@ -47,7 +47,9 @@ public class Shop extends Actor {
             if(Greenfoot.isKeyDown((i + 1) + "")) {
                 if(!oldKeysPressed[i]) {
                     kaufen(items[i]);
-                    world.pause();
+                    if(items[i].isPlaceable()) {
+                        world.pause();
+                    }
                     oldKeysPressed[i] = true;
                 }
             } else {
