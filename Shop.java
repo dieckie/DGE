@@ -13,6 +13,8 @@ public class Shop extends Actor {
     Item[] items = {new Spikes(), new Wand(), new Herz(), new GoldeneEichel()};
     boolean[] oldKeysPressed;
     boolean init = true;
+    GreenfootSound click = new GreenfootSound("shopClick.wav");
+    GreenfootSound error = new GreenfootSound("error.wav");
 
     public Shop() {
     }
@@ -69,6 +71,7 @@ public class Shop extends Actor {
             if(Greenfoot.isKeyDown((i + 1) + "")) {
                 if(!oldKeysPressed[i]) {
                     kaufen(items[i]);
+
                     if(items[i].isPlaceable()) {
                         world.pause();
                     }
@@ -114,19 +117,22 @@ public class Shop extends Actor {
 
     public void kaufen(Item item) {
         if(world.coins.coins >= item.price) {
-            world.coins.looseCoins(item.price);
             if(item.isBuyable(world)) {
                 if(world.wellen.welle >= item.unlock) {
+                    click.setVolume(75);
+                    click.play();
+                    world.coins.looseCoins(item.price);
                     if(item.isPlaceable()) {
                         world.addObject(new Placer(item), lastX, lastY);
                     } else {
                         world.addObject(item.newInstance(), 0, 0);
                     }
-                } else {
-                    System.out.println("Not unlocked!");
+                    return;
                 }
             }
         }
+        error.setVolume(85);
+        error.play();
     }
 
     int oldIndex = -1;
