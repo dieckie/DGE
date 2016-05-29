@@ -31,7 +31,6 @@ public class Welt1 extends World {
         prepare();
         Class[] paintorder = {Debug.class, Settings.class};
         setPaintOrder(paintorder);
-        initDifficulty();
     }
 
     /**
@@ -123,20 +122,6 @@ public class Welt1 extends World {
         //pausing = false;
         //resuming = true;
         menustate = 0;
-    }
-
-    public void initDifficulty() {
-        switch(Config.difficulty) {
-            case 1:
-            getEichhoernchen().setShotInterval(50);
-            break;
-            case 2:
-            getEichhoernchen().setShotInterval(70);
-            break;
-            case 3:
-            getEichhoernchen().setShotInterval(80);
-            break;
-        }
     }
 
     public boolean isGameOver() {

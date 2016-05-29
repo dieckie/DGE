@@ -24,6 +24,17 @@ public class Eichhoernchen extends Actor {
 
     public Eichhoernchen() {
         health = Config.saveHealth;
+        switch(Config.difficulty) {
+            case 1:
+            SHOT_INTERVAL = 50;
+            break;
+            case 2:
+            SHOT_INTERVAL = 55;
+            break;
+            case 3:
+            SHOT_INTERVAL = 75;
+            break;
+        }
     }
 
     public void act() {
