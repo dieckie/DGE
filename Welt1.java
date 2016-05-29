@@ -19,7 +19,7 @@ public class Welt1 extends World {
     int gamestate = 0;
     boolean pausing = false;
     boolean resuming = false;
-     GreenfootSound wave = new GreenfootSound("newWave.wav");
+    GreenfootSound wave = new GreenfootSound("newWave.wav");
 
     /**
      * Constructor for objects of class Welt_1.
@@ -93,11 +93,15 @@ public class Welt1 extends World {
             }
         }
     }
-    
+
     public void neueWelle(int welle) {
         shop.redrawShop();
         wave.setVolume(85);
         wave.play();
+        Config.saveWaves = welle;
+        Config.saveCoins = coins.coins;
+        Config.saveHealth = eichhoernchen.getHealth();
+        Config.speichern();
     }
 
     public Eichhoernchen getEichhoernchen() {

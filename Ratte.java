@@ -37,9 +37,9 @@ public class Ratte extends Enemy {
             case 1:
             return 1;
             case 2:
-            return 2;
+            return 1;
             case 3:
-            return 3;
+            return 2;
         }
         return 0;
     }

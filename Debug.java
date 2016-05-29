@@ -29,7 +29,7 @@ public class Debug extends Actor {
             setImage("leer.png");
         }
         if(Greenfoot.isKeyDown("-")) {
-            world.eichhoernchen.hurt(1);
+            world.eichhoernchen.hurt(5);
         }
         if(Greenfoot.isKeyDown("+") && world.eichhoernchen.getHealth() < 10) {
             world.eichhoernchen.heal(1);
