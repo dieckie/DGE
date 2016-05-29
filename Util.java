@@ -51,4 +51,15 @@ public class Util {
         img.setColor(new Color(200, 200, 200));
         return img;
     }
+    
+    public static GreenfootImage greyscale(GreenfootImage img) {
+        for(int y = 0; y < img.getHeight(); y ++) {
+             for(int x = 0; x < img.getHeight(); x ++) {
+                 Color c = img.getColorAt(x, y);
+                 int dc = (c.getBlue() + c.getRed() + c.getGreen()) / 3;
+                 img.setColorAt(x, y, new Color(dc, dc, dc, c.getAlpha()));
+             }
+        }
+        return img;
+    }
 }

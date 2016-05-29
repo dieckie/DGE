@@ -4,4 +4,6 @@ comment1.params=text\ x\ y\ width\ lineheight\ center\ g
 comment1.target=java.awt.Graphics2D\ drawMultilineText(java.lang.String,\ float,\ float,\ float,\ float,\ boolean,\ java.awt.Graphics2D)
 comment2.params=coins
 comment2.target=greenfoot.GreenfootImage\ drawCoins(int)
-numComments=3
+comment3.params=img
+comment3.target=greenfoot.GreenfootImage\ greyscale(greenfoot.GreenfootImage)
+numComments=4
