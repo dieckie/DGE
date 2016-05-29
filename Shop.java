@@ -47,8 +47,7 @@ public class Shop extends Actor {
             welle = world.wellen.welle;
         }
         for(int i = 0; i < items.length; i++) {
-
-            if(welle >= items[i].unlock[Config.difficulty]) {
+            if(welle >= items[i].unlock[Config.difficulty - 1]) {
                 shop.drawImage(new GreenfootImage("images/ui/shop/" + items[i].iconName), (i % 2) * 190 + 2 + 70, (i / 2) * 102 + 2 + 25);
             } else {
                 shop.drawImage(Util.greyscale(new GreenfootImage("images/ui/shop/" + items[i].iconName)), (i % 2) * 190 + 2 + 70, (i / 2) * 102 + 2 + 25);
@@ -120,7 +119,7 @@ public class Shop extends Actor {
     public void kaufen(Item item) {
         if(world.coins.coins >= item.price) {
             if(item.isBuyable(world)) {
-                if(world.wellen.welle >= item.unlock[Config.difficulty]) {
+                if(world.wellen.welle >= item.unlock[Config.difficulty - 1]) {
                     click.setVolume(75);
                     click.play();
                     world.coins.looseCoins(item.price);
