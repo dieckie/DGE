@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GoldeneEichel extends Item
 {
     public GoldeneEichel() {
-        title = "Goldene Eichel";
+        title = "10 goldene Eicheln";
         iconName = "goldene Eichel.png";
         price = 10;
-        description = "10 goldene Eicheln. Richten bei Gegnern hoeheren Schaden an";
+        description = "Richten bei Gegnern doppelten Schaden an";
         placeable = false;
         setImage("images/ui/shop/" + iconName);
         unlock[0] = 12;
