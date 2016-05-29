@@ -1,3 +1,4 @@
 Gegner:
 	Tasteneigaben tätigen
 	Ist unten, wirft Sachen hoch
+Kleine "MessageBox" für Anzeigen

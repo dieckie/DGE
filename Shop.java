@@ -15,12 +15,6 @@ public class Shop extends Actor {
     boolean init = true;
 
     public Shop() {
-        shop = new GreenfootImage("images/ui/shop/shop.png");
-        for(int i = 0; i < items.length; i++) {
-            shop.drawImage(new GreenfootImage("images/ui/shop/" + items[i].iconName), (i % 2) * 190 + 2 + 70, (i / 2) * 102 + 2 + 25);
-        }
-        setImage(shop);
-        oldKeysPressed = new boolean[items.length];
     }
 
     /**
@@ -30,6 +24,8 @@ public class Shop extends Actor {
         if(init) {
             init = false;
             world = (Welt1) getWorld();
+            redrawShop();
+            oldKeysPressed = new boolean[items.length];
         }
         greenfoot.MouseInfo m = Greenfoot.getMouseInfo();
         if(m != null) {
@@ -40,6 +36,32 @@ public class Shop extends Actor {
         checkClicks();
         repaint();
         keysPressed();
+    }
+
+    public void redrawShop() {
+        shop = new GreenfootImage("images/ui/shop/shop.png");
+        int welle = 1;
+        if(world != null) {
+            welle = world.wellen.welle;
+        }
+        for(int i = 0; i < items.length; i++) {
+
+            if(welle >= items[i].unlock) {
+                shop.drawImage(new GreenfootImage("images/ui/shop/" + items[i].iconName), (i % 2) * 190 + 2 + 70, (i / 2) * 102 + 2 + 25);
+            }
+        }
+        setImage(shop);
+    }
+
+    public void addItem(Item it) {
+        Item[] newI = new Item[items.length + 1];
+        for(int i = 0; i < items.length; i++) {
+            newI[i] = items[i];
+        }
+        newI[items.length] = it;
+        items = newI;
+        oldKeysPressed = new boolean[items.length];
+        redrawShop();
     }
 
     public void keysPressed() {
@@ -94,10 +116,14 @@ public class Shop extends Actor {
         if(world.coins.coins >= item.price) {
             world.coins.looseCoins(item.price);
             if(item.isBuyable(world)) {
-                if(item.isPlaceable()) {
-                    world.addObject(new Placer(item), lastX, lastY);
+                if(world.wellen.welle >= item.unlock) {
+                    if(item.isPlaceable()) {
+                        world.addObject(new Placer(item), lastX, lastY);
+                    } else {
+                        world.addObject(item.newInstance(), 0, 0);
+                    }
                 } else {
-                    world.addObject(item.newInstance(), 0, 0);
+                    System.out.println("Not unlocked!");
                 }
             }
         }
@@ -121,10 +147,10 @@ public class Shop extends Actor {
                 }
                 g.drawString(item.title, 20, 562);
                 g.setFont(g.getFont().deriveFont(15F));
-                g.setColor(new Color(50, 50, 50));
+                g.setColor(new Color(20, 20, 20));
                 g = Util.drawMultilineText(item.description, 20, 605, 250, 25, false, g);
                 g.dispose();
-                img.drawImage(Util.drawCoins(item.price), 30, 660);
+                img.drawImage(Util.drawCoins(item.price), 20, 660);
             }
             setImage(img);
             oldIndex = index;

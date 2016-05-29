@@ -15,6 +15,7 @@ public class Herz extends Item {
         price = 10;
         placeable = false;
         setImage("images/ui/shop/" + iconName);
+        unlock = 10;
     }
 
     public void act() {

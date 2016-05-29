@@ -13,8 +13,10 @@ public abstract class Item extends Actor {
     String iconName = "";
     int price = 0;
     boolean placeable = true;
+    int unlock = 0;
 
     public void act() {
+        
     }
 
     public boolean isPlaceable() {

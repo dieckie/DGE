@@ -14,11 +14,11 @@ public class Welt1 extends World {
     Eichhoernchen eichhoernchen;
     Wellen wellen;
     Coins coins;
+    Shop shop;
     int menustate = 0;
     int gamestate = 0;
     boolean pausing = false;
     boolean resuming = false;
-    
 
     /**
      * Constructor for objects of class Welt_1.
@@ -50,7 +50,7 @@ public class Welt1 extends World {
         addObject(p4, 450, 240);
         eichhoernchen = new Eichhoernchen();
         addObject(eichhoernchen, 450, 92);
-        Shop shop = new Shop();
+        shop = new Shop();
         addObject(shop, 1090, 360);
         Greenfoot.setSpeed(60);
         Herzen herzen = new Herzen();
@@ -70,7 +70,7 @@ public class Welt1 extends World {
     }
 
     int speed = 60;
-    
+
     public void act() {
         if(pausing) {
             if(speed > 40) {
@@ -93,6 +93,10 @@ public class Welt1 extends World {
             }
         }
     }
+    
+    public void neueWelle(int welle) {
+        shop.redrawShop();
+    }
 
     public Eichhoernchen getEichhoernchen() {
         return eichhoernchen;
@@ -105,7 +109,6 @@ public class Welt1 extends World {
     public boolean isRunning() {
         return menustate == 0;
     }
-
 
     public void pause() {
         //pausing = true;

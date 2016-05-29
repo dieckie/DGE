@@ -50,6 +50,7 @@ public class Wellen extends Actor {
                 init = false;
             } else {
                 welle++;
+                world.neueWelle(welle);
             }
             Config.saveWaves = welle;
             Config.saveCoins = world.coins.coins;

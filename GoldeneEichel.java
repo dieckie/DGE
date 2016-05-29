@@ -14,7 +14,9 @@ public class GoldeneEichel extends Item
         price = 10;
         description = "10 goldene Eicheln. Richten bei Gegnern hoeheren Schaden an";
         placeable = false;
+        unlock = 15;
         setImage("images/ui/shop/" + iconName);
+        
     }
     
     public void act() {

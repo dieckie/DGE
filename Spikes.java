@@ -26,6 +26,7 @@ public class Spikes extends Item {
         iconName = "spikes.png";
         price = 10;
         setImage("images/ui/shop/" + iconName);
+        unlock = 5;
     }
 
     /**
