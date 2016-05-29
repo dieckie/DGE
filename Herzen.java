@@ -25,7 +25,7 @@ public class Herzen extends Actor {
     }
 
     /**
-     * veraendert die Anzeige bei abzug eines Lebens (l).
+     * veraendert die Anzeige bei abzug eines Lebens(l).
      */
     private void leben() {
         setImage("images/Herz/H" + eichhoernchen.getHealth() + ".png");

@@ -101,8 +101,8 @@ public abstract class Enemy extends Actor {
     /**
      * fuegt der Ratte schaden zu; entscheidet ueber die toene bei den Bedingungen.
      */
-    public void verletzten() {
-        schaden++;
+    public void verletzten(int damage) {
+        schaden += damage;
         lastHurt = System.currentTimeMillis();
         kick.setVolume(Settings.clickVolume);
         kick.play();

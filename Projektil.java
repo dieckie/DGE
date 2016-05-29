@@ -9,37 +9,34 @@ import greenfoot.*;
  */
 public class Projektil extends Actor {
 
-    Actor ratte;
-    Actor schlange;
-
+    int damage = 1;
+    
+    public Projektil(boolean golden) {
+        if(golden) {
+            damage = 2;
+            setImage("images/goldene Eichel.png");
+        } else {
+            damage = 1;
+            setImage("images/eichel.png");
+        }
+    }
+    
     /**
      * Act - do whatever the Projektil wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        /*
-         * Projektil bewegt sich
-         */
-        // move(4);
         setLocation(getX(), getY() + 4);
-        loeschenR();
+        collisionDetection();
     }
 
     /**
-     * entfernt die Eichel bei beruehrung mit der Ratte
+     * entfernt die Eichel bei Beruehrung mit Gegner
      */
-    private void loeschenR() { // TODO INTERSECTING WITH ENEMY!
-        ratte = getOneIntersectingObject(Ratte.class);
-        schlange = getOneIntersectingObject(Schlange.class);
-        if(ratte != null || (schlange != null)) {
-            if(ratte != null) {
-                ((Ratte) getOneIntersectingObject(Ratte.class)).verletzten();
-                getWorld().removeObject(this);
-            } else {
-                if(schlange != null) {
-                    ((Schlange) getOneIntersectingObject(Schlange.class)).verletzten();
-                    getWorld().removeObject(this);
-                }
-            }
+    private void collisionDetection() {
+        Enemy enemy = (Enemy) getOneIntersectingObject(Enemy.class);
+        if(enemy != null) {
+            enemy.verletzten(damage);
+            getWorld().removeObject(this);
         }
         if(getWorld() != null && getY() > getWorld().getHeight() - 4) {
             getWorld().removeObject(this);

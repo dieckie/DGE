@@ -10,7 +10,7 @@ public class Shop extends Actor {
     int index = -1;
     Welt1 world;
     GreenfootImage shop;
-    Item[] items = {new Spikes(), new Wand(), new Herz()};
+    Item[] items = {new Spikes(), new Wand(), new Herz(), new GoldeneEichel()};
     boolean[] oldKeysPressed;
     boolean init = true;
 

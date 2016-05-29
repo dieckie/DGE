@@ -29,7 +29,6 @@ public class FertigVorlaeufig extends Actor {
     }
 
     public void druecken() {
-        // TODO das hier besser zusammen fügen.
         if(Greenfoot.isKeyDown("escape")) {
             if(world.isRunning() && !isEscPressed) {
                 world.pause();

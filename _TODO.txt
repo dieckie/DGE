@@ -1,0 +1,3 @@
+Gegner:
+	Tasteneigaben tätigen
+	Ist unten, wirft Sachen hoch

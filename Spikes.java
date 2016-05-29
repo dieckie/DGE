@@ -19,7 +19,7 @@ public class Spikes extends Item {
     private int hit = 0;
     boolean init = true;
     Welt1 world;
-
+    //TODO durch Act-Methoden ersetzten
     public Spikes() {
         title = "Spikes";
         description = "Wird nach 8 Treffern wieder entfernt";
@@ -47,19 +47,13 @@ public class Spikes extends Item {
      */
     private void spikesSchaden() {
         if(System.currentTimeMillis() - timeSP > HURT_INTERVAL) {
-            if(getOneIntersectingObject(Ratte.class) != null || (getOneIntersectingObject(Schlange.class) != null)) {
-                if(getOneIntersectingObject(Ratte.class) != null) {
-                    ((Ratte) getOneIntersectingObject(Ratte.class)).verletzten();
-                    timeSP = System.currentTimeMillis();
-                    hit++;
-                } else {
-                    if(getOneIntersectingObject(Schlange.class) != null) {
-                        ((Schlange) getOneIntersectingObject(Schlange.class)).verletzten();
-                        timeSP = System.currentTimeMillis();
-                        hit++;
-                    }
-                }
+            Enemy enemy  = (Enemy) getOneIntersectingObject(Enemy.class);
+            if(enemy != null) {
+                timeSP = System.currentTimeMillis();
+                enemy.verletzten(1);
+                hit++;
             }
+
         }
     }
 

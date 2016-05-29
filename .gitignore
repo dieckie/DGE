@@ -1,5 +1,6 @@
 *.class
 *.sh
 *.bat
+*.cmd
 error.txt
 config.txt

@@ -10,13 +10,18 @@ public class Eichhoernchen extends Actor {
 
     public int SHOT_INTERVAL = 1;
     public int HURT_COOLDOWN = 200;
-    int health = 10;
+
     Welt1 world;
+
+    int health = 10;
+    int goldeneEicheln = 0;
+
     int latestHit = HURT_COOLDOWN;
     /** true is left, false is right */
     boolean direction = false;
+
     boolean init = true;
-    
+
     public Eichhoernchen() {
         health = Config.saveHealth;
     }
@@ -59,7 +64,13 @@ public class Eichhoernchen extends Actor {
         shotActs++;
         if(shotActs > SHOT_INTERVAL) {
             if(Greenfoot.isKeyDown("space")) {
-                Projektil projektil = new Projektil();
+                Projektil projektil = null;
+                if(goldeneEicheln > 0){
+                    projektil = new Projektil(true);
+                    goldeneEicheln--;
+                } else {
+                    projektil = new Projektil(false);
+                }
                 if(direction) {
                     getWorld().addObject(projektil, getX() - 20, getY() + 17);
                 } else {
@@ -69,6 +80,10 @@ public class Eichhoernchen extends Actor {
                 shotActs = 0;
             }
         }
+    }
+
+    public void addGoldeneEicheln(int amount) {
+        goldeneEicheln += amount;
     }
 
     /**

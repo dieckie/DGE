@@ -5,5 +5,5 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ leben()
-comment2.text=\r\n\ veraendert\ die\ Anzeige\ bei\ abzug\ eines\ Lebens\ (l).\r\n
+comment2.text=\r\n\ veraendert\ die\ Anzeige\ bei\ abzug\ eines\ Lebens(l).\r\n
 numComments=3
