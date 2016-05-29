@@ -7,14 +7,23 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Ratte extends Enemy {
-
     public Ratte() {
         setImage("images/entity/mouse_r.png");
         DAMAGE = 1;
         SPEED = 1;
-        HEALTH = 5;
         SPRITE_NAME = "mouse";
         WOUND_SPRITE_DURATION = 200;
+         switch(Config.difficulty) {
+            case 1:
+            HEALTH = 4;
+            break;
+            case 2:
+            HEALTH = 3;
+            break;
+            case 3:
+            HEALTH = 3;
+            break;
+        }
     }
 
     @Override
